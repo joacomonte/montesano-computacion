@@ -1,0 +1,19 @@
+.sideMenu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin: 10px;
+    padding: 20px;
+    transition: border 0.3s ease, border-radius 0.3s ease; /* Adding transitions for smooth animations */
+    border: 1px solid transparent; /* Adding initial border style */
+    border-radius: 0; /* Adding initial border radius */
+    background-color: black;
+}
+
+.sideMenu:hover {
+    border: 1px solid grey; /* Adding a border on hover */
+    border-radius: 20px; /* Adding border radius on hover */
+}
+
+

@@ -1,0 +1,29 @@
+.menuItem {
+    margin: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Adding transition for smooth animation */
+}
+.menuTitle {
+    margin: 5px 0;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.3s ease; /* Adding transition for smooth animation */
+}
+
+/* style.css */
+
+.menuLabel {
+    display: inline-block;  /* so that the block responds to content width */
+    padding: 10px 15px;  /* some padding for better visual effect */
+    border-radius: 4px;  /* rounding corners for aesthetics */
+    cursor: pointer;  /* indicate it's clickable */
+    transition: border 0.3s ease, border-radius 0.3s ease; /* Adding transitions for smooth animations */
+    border: 1px solid transparent; /* Adding initial border style */
+    border-radius: 0; /* Adding initial border radius */
+}
+
+.menuLabel:hover {
+    border: 1px solid grey; /* Adding a border on hover */
+    border-radius: 10px; /* Adding border radius on hover */
+}
+
