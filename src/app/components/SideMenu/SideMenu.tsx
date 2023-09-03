@@ -6,37 +6,26 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { IMenuItemProps } from "./interfaces"; 
+import { ISideMenuProps, SideMenuHandles } from "./interfaces"; 
 import style from "./SideMenu.module.css";
 import MenuItem from "./MenuItem/MenuItem";
 
 
-export interface SideMenuHandles {
-  toggleMenu: (open?: boolean) => void;
-  node: () => HTMLDivElement | null;
-}
 
-interface SideMenuProps {
-  data: IMenuItemProps[];
-}
 
-const SideMenu = React.forwardRef<SideMenuHandles, SideMenuProps>((props, ref) => {
-  const { data } = props; // Destructure data prop
+const SideMenu = forwardRef<SideMenuHandles, ISideMenuProps>((props, ref) => {
+  const { data } = props;
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const sideMenuRef = useRef<HTMLDivElement>(null);
 
-  const toggleMenu = (open?: boolean) => {
-    if (typeof open === "boolean") {
-      setIsMenuOpen(open);
-    } else {
-      setIsMenuOpen((prevState) => !prevState);
-    }
+  const toggleMenu = (open: boolean = !isMenuOpen) => {
+    setIsMenuOpen(open);
   };
 
   useImperativeHandle(ref, () => ({
-    toggleMenu: toggleMenu, // Using the local toggleMenu function
-    node: () => sideMenuRef.current,
+    toggleMenu,
+    getMenuNode: () => sideMenuRef.current
   }));
 
   return (

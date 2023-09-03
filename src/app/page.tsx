@@ -1,26 +1,38 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import {useRef} from "react";
+import {useEffect, useRef} from "react";
 
 import styles from "./page.module.css";
 
-import ProductCard from "./components/ProductCard/ProductCard";
-import SideMenu, { SideMenuHandles } from "./components/SideMenu/SideMenu";
 import { menuData } from "./data/menuData";
+
+import ProductCard from "./components/ProductCard/ProductCard";
+import SideMenu from "./components/SideMenu/SideMenu";
+
 import useOutsideClick from "./hooks/useOutsideClick";
 import useFetchData from "./hooks/useFetchData.ts";
 import useFilterData from "./hooks/useFilterData";
 
+import { SideMenuHandles } from "./interfaces/sideMenuHandles";
+
 export default function Home() {
+
+
   
   const sideMenuRef = useRef<SideMenuHandles | null>(null);
+
+  const isClickedOutside = useOutsideClick(sideMenuRef);
   
   const data = useFetchData();
   const { filteredData, setSearchTerm, searchTerm } = useFilterData(data);
 
-  useOutsideClick(sideMenuRef, () => {
-    sideMenuRef.current?.toggleMenu(false);
-  });
+  
+
+  useEffect(() => {
+    if (isClickedOutside) {
+      sideMenuRef.current?.toggleMenu(false);
+    }
+  }, [isClickedOutside]);
   
 
   return (
