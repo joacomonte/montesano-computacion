@@ -5,10 +5,6 @@ export interface IMenuItemProps {
     depth?: number; // Using recursion here since children is an array of IMenuItemProps.
   }
   
-  export interface ISideMenuProps {
+  export interface SideMenuProps {
     data: IMenuItemProps[];
-  }
-  
-  export interface SideMenuHandles {
-    toggleMenu: () => void;
   }

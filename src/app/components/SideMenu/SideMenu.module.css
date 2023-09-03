@@ -16,4 +16,10 @@
     border-radius: 20px; /* Adding border radius on hover */
 }
 
+.menuTitle {
+    margin: 5px 0;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.3s ease; /* Adding transition for smooth animation */
+}
 

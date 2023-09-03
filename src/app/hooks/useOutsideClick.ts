@@ -1,30 +1,20 @@
-import { useEffect, useState, RefObject } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect } from "react";
 
-interface WithNodeMethod {
-  getMenuNode: () => HTMLElement | null;
-}
-
-function useOutsideClick(ref: RefObject<WithNodeMethod>): boolean {
-  const [isClickedOutside, setIsClickedOutside] = useState<boolean>(false);
+const useClickOutside = (ref: React.RefObject<HTMLElement>, callback: () => void) => {
+  const handleClick = (event: MouseEvent) => {
+    if (ref.current && !ref.current.contains(event.target as Node)) {
+      callback();
+    }
+  };
 
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      let node = ref.current?.getMenuNode();
+    document.addEventListener("mousedown", handleClick);
 
-      if (node && !node.contains(event.target as Node)) {
-        setIsClickedOutside(true);
-      } else {
-        setIsClickedOutside(false);
-      }
-    }
-
-    document.addEventListener("click", handleClickOutside);
     return () => {
-      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("mousedown", handleClick);
     };
-  }, [ref]);
+  }, [callback]);
+};
 
-  return isClickedOutside;
-}
-
-export default useOutsideClick;
+export default useClickOutside;

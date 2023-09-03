@@ -1,39 +1,30 @@
-"use client";
-
-import React, {
-  forwardRef,
-  useImperativeHandle,
-  useRef,
-  useState,
-} from "react";
-import { ISideMenuProps, SideMenuHandles } from "./interfaces"; 
+import React, { useState, useEffect, useRef } from "react";
+import { IMenuItemProps, SideMenuProps } from "./interfaces"; // Make sure to import the correct path to your interfaces
 import style from "./SideMenu.module.css";
 import MenuItem from "./MenuItem/MenuItem";
+import useClickOutside from "@/app/hooks/useOutsideClick";
 
+const SideMenu = ({ data }: SideMenuProps) => {
 
-
-
-const SideMenu = forwardRef<SideMenuHandles, ISideMenuProps>((props, ref) => {
-  const { data } = props;
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
-  const sideMenuRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef(null);
 
   const toggleMenu = (open: boolean = !isMenuOpen) => {
     setIsMenuOpen(open);
   };
 
-  useImperativeHandle(ref, () => ({
-    toggleMenu,
-    getMenuNode: () => sideMenuRef.current
-  }));
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  useClickOutside(menuRef, closeMenu);
 
   return (
-    <aside className={style.sideMenu} ref={sideMenuRef}>
+    <aside className={style.sideMenu}>
       <div
         className={style.menuTitle}
         onClick={() => toggleMenu()}
-        style={{ fontSize: "24px" }}
       >
         {isMenuOpen ? "X" : "Menu"}
       </div>
@@ -44,9 +35,7 @@ const SideMenu = forwardRef<SideMenuHandles, ISideMenuProps>((props, ref) => {
         ))}
     </aside>
   );
-});
-
-SideMenu.displayName = "SideMenu";
+};
 
 
 export default SideMenu;
