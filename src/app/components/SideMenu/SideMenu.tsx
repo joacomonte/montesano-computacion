@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
-import { IMenuItemProps, SideMenuProps } from "./interfaces"; // Make sure to import the correct path to your interfaces
+'use client'
+import React, { useState, useRef } from "react";
+import {SideMenuProps } from "./interfaces"; // Make sure to import the correct path to your interfaces
 import style from "./SideMenu.module.css";
 import MenuItem from "./MenuItem/MenuItem";
 import useClickOutside from "@/app/hooks/useOutsideClick";

@@ -2,7 +2,6 @@
 
 import { RowData } from "../types/rowData";
 
-// helpers/filterProducts.ts
 
 export const filterProducts = (data: RowData[], searchTerm: string): RowData[] => {
     const words = searchTerm.toLowerCase().split(' ');
