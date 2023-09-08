@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    margin: 17px 15px;
+    margin: 15px 15px;
     padding: 5px 15px;
     transition: border 0.3s ease, border-radius 0.3s ease; 
     border: 1px solid transparent; 
@@ -14,7 +14,11 @@
     background-color: rgba(13, 13, 13, 0.901);
     backdrop-filter: blur(5px);
     z-index: 6;
+
+    max-height: 80vh;
+
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .sideMenu:hover {

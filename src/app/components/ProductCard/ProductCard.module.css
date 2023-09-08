@@ -2,12 +2,12 @@
 
 .card {
     position: relative;
-    background-color: #101010;
-    border: 1px solid #181818;
-    padding: 16px;
+    background-color: #242424;
+    border: 1px solid #252525;
+    padding: 20px 30px;
+
     margin: 16px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(111, 111, 111, 0.1);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -18,6 +18,54 @@
 
 .card h2{
     font-size: 20px;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 5px;
+
+}
+.card h4{
+    font-size: 14px;
+    color: #757575;
+    font-weight:400;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 20px;
+    margin: 0;
+}
+.card h3{
+
+    font-size: 20px;
+    font-weight:700;
+}
+
+.card button{
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border: none;
+    padding: 0 1.5rem;
+    height: 2.5rem;
+    line-height: 0.5rem;
+    border-radius: 7px;
+    font-weight: 400;
+    font-size: 16px;
+    background: #009c49;
+    color: #f3f3f3;
+
+    transition: background 0.2s ease,color 0.2s ease;
+}
+
+.card button:hover{
+    background: #007c3a;
+
+}
+.priceAndButton{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 .cardImg{

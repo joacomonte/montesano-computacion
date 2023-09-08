@@ -34,7 +34,7 @@ const MenuItem: FC<IMenuItemProps> = ({ label, children = [], depth = 0 }) => {
   };
 
   return (
-    <div style={{ marginLeft: `${depth * 10}px` }} className={style.menuItem}>
+    <div style={{ paddingLeft: `${depth * 20}px` }} className={style.menuItem}>
       {renderLabel()}
       {isOpen &&
         children.map((child) => (

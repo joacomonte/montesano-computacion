@@ -12,7 +12,6 @@ interface ProductProps {
 const ProductCard: React.FC<ProductProps> = ({ title, img, price, stock }) => {
   return (
     <div className={styles.card}>
-      <h2>{title}</h2>
       <div className={styles.cardImg}>
         {img && img.trim() !== "" ? (
           <Image
@@ -21,15 +20,21 @@ const ProductCard: React.FC<ProductProps> = ({ title, img, price, stock }) => {
             sizes="500px"
             fill
             style={{
-              objectFit: 'contain',
+              objectFit: "contain",
             }}
           ></Image>
         ) : (
           <div className={styles.error}>Image not available</div>
         )}
       </div>
-      <p>{price}</p>
-      <p>{stock}</p>
+      <div>
+        <h2>{title}</h2>
+        <h4>{stock}</h4>
+      </div>
+      <div className={styles.priceAndButton}>
+        <h3>{price}</h3>
+        <button>WhatsApp</button>
+      </div>
     </div>
   );
 };
