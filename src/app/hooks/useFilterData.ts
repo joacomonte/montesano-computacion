@@ -1,18 +1,47 @@
 // hooks/useFilterData.ts
-import { useState, useEffect } from 'react';
-import { RowData } from '../types/rowData';
-import { filterProducts } from '../helpers/filterProducts';
 
-function useFilterData(data: RowData[], initialSearchTerm = "") {
-    const [filteredData, setFilteredData] = useState<RowData[]>(data);
-    const [searchTerm, setSearchTerm] = useState(initialSearchTerm);
-  
-    useEffect(() => {
-      const filtered = filterProducts(data, searchTerm);
-      setFilteredData(filtered);
-    }, [searchTerm, data]);
-  
-    return { filteredData, setSearchTerm, searchTerm };
-  }
-  
-  export default useFilterData;
+import { Product, ProductsList } from "../types/rowData";
+
+export default function useFilterData(data: ProductsList, searchTerm: string) {
+  const normalizedTerm = searchTerm.toLowerCase().split(' ');
+
+  const filteredData = data
+    .filter(row => doesRowMatchSearchTerms(row, normalizedTerm))
+    .sort(compareRowSearchTermPosition(searchTerm));
+
+  return { filteredData };
+}
+
+function doesRowMatchSearchTerms(product: Product, searchTerms: string[]): boolean {
+  return searchTerms.every(term => product[0]?.toLowerCase().includes(term));
+}
+
+function compareRowSearchTermPosition(searchTerm: string) {
+  return (a: Product, b: Product): number => {
+    const indexA = getTermIndexInRow(a, searchTerm);
+    const indexB = getTermIndexInRow(b, searchTerm);
+    
+    return indexA - indexB;
+  };
+}
+
+function getTermIndexInRow(row: Product, searchTerm: string): number {
+  return row[0]?.toLowerCase().indexOf(searchTerm) ?? Infinity;
+}
+
+
+
+
+
+// export default function useFilterData(data: RowData[], searchTerm: string) {
+
+//   // Split the searchTerm by space
+//   const searchTerms = searchTerm.toLowerCase().split(' ');
+
+//   const filteredData = data.filter(row => 
+//     searchTerms.every(term => row[0]?.toLowerCase().includes(term))
+//   );
+
+//   return { filteredData };
+// }
+

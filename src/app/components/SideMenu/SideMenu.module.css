@@ -3,23 +3,36 @@
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    margin: 10px;
-    padding: 20px;
-    transition: border 0.3s ease, border-radius 0.3s ease; /* Adding transitions for smooth animations */
-    border: 1px solid transparent; /* Adding initial border style */
-    border-radius: 0; /* Adding initial border radius */
-    background-color: black;
+    margin: 15px;
+    padding: 15px;
+    transition: border 0.3s ease, border-radius 0.3s ease; 
+    border: 1px solid transparent; 
+    border-radius: 12px;
+    background-color: rgba(13, 13, 13, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 6;
+
 }
 
 .sideMenu:hover {
-    border: 1px solid grey; /* Adding a border on hover */
-    border-radius: 20px; /* Adding border radius on hover */
+    border: 1px solid grey; 
+    border-radius: 20px;
 }
 
 .menuTitle {
     margin: 5px 0;
     cursor: pointer;
-    font-size: 24px;
-    transition: background-color 0.3s ease; /* Adding transition for smooth animation */
+    font-size: 20px;
 }
 
+.menuTitle span {
+    display: none;
+}
+
+.menuTitle.open span.x {
+    display: inline;
+}
+
+.menuTitle:not(.open) span.menu {
+    display: inline;
+}

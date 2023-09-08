@@ -1,2 +1,3 @@
 
-export type RowData = (string | null)[];
+export type ProductsList = Product[];
+export type Product = (string | null)[];

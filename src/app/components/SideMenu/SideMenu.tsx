@@ -9,7 +9,7 @@ const SideMenu = ({ data }: SideMenuProps) => {
 
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
-  const menuRef = useRef(null);
+  const divRef = useRef(null);
 
   const toggleMenu = (open: boolean = !isMenuOpen) => {
     setIsMenuOpen(open);
@@ -19,17 +19,12 @@ const SideMenu = ({ data }: SideMenuProps) => {
     setIsMenuOpen(false);
   };
 
-  useClickOutside(menuRef, closeMenu);
+  useClickOutside(divRef, closeMenu);
 
   return (
-    <aside className={style.sideMenu}>
-      <div
-        className={style.menuTitle}
-        onClick={() => toggleMenu()}
-      >
-        {isMenuOpen ? "X" : "Menu"}
-      </div>
-
+    <aside ref={divRef} className={style.sideMenu}>
+      {!isMenuOpen && <div className={style.menuTitle} onClick={() => toggleMenu()}>Menu</div>}
+      {isMenuOpen && <div className={style.menuTitle} onClick={() => toggleMenu()}>X</div>}
       {isMenuOpen &&
         data.map((category) => (
           <MenuItem key={category.id} {...category} depth={0} />

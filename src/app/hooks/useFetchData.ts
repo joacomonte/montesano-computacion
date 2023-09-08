@@ -1,10 +1,10 @@
 // hooks/useFetchData.ts
 import { useState, useEffect } from 'react';
-import { RowData } from '../types/rowData';
+import { Product, ProductsList } from '../types/rowData';
 import { fetchSheetData } from '../services/fetchSheetData';
 
 function useFetchData() {
-  const [data, setData] = useState<RowData[]>([]);
+  const [data, setData] = useState<ProductsList>([]);
 
   useEffect(() => {
     async function fetchData() {
