@@ -5,9 +5,17 @@ const nextConfig = {
       serverActions: true,
     },
     images: {
-      domains: ['res.cloudinary.com'],
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "**",
+        },
+      ],
     },
 }
 
 module.exports = nextConfig
 
+// images: {
+//   domains: ['res.cloudinary.com'],
+// },
