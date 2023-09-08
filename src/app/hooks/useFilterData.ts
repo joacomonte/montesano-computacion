@@ -1,6 +1,6 @@
 // hooks/useFilterData.ts
 
-import { Product, ProductsList } from "../types/rowData";
+import { Product, ProductsList } from "../types/products";
 
 export default function useFilterData(data: ProductsList, searchTerm: string) {
   const normalizedTerm = searchTerm.toLowerCase().split(' ');

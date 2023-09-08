@@ -2,7 +2,7 @@
 import React, { FC, useRef, useState } from "react";
 import styles from "./QuickSearch.module.css";
 // Make sure to replace with the correct path
-import { ProductsList } from "@/app/types/rowData";
+import { ProductsList } from "@/app/types/products";
 import useFilterData from "@/app/hooks/useFilterData";
 import useClickOutside from "@/app/hooks/useOutsideClick";
 

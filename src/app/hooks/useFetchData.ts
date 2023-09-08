@@ -1,6 +1,6 @@
 // hooks/useFetchData.ts
 import { useState, useEffect } from 'react';
-import { Product, ProductsList } from '../types/rowData';
+import { Product, ProductsList } from '../types/products';
 import { fetchSheetData } from '../services/fetchSheetData';
 
 function useFetchData() {

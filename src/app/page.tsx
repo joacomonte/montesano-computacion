@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import { menuData } from "./data/menuData";
 import ProductCard from "./components/ProductCard/ProductCard";
 import SideMenu from "./components/SideMenu/SideMenu";
-import { Product, ProductsList } from "./types/rowData";
+import { Product, ProductsList } from "./types/products";
 import QuickSearch from "./components/QuickSearch/QuickSearch";
 
 
@@ -14,7 +14,7 @@ async function getData(): Promise<ProductsList> {
   const apiKey = "AIzaSyBLFucdHwI51bvInRnmig4Tl2fglpqYffk";
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/productList?key=${apiKey}`;
   const res = await fetch(url, {
-    next: { revalidate: 600 },
+    next: { revalidate: 60 },
   });
 
   if (!res.ok) {

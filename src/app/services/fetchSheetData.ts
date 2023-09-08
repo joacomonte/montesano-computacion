@@ -1,4 +1,4 @@
-import { Product } from '../types/rowData';
+import { Product } from '../types/products';
 
 const sheetId = '1r74G-LQCSEDh5_O6mnDecMoi8BMvzStdt4rNLu9zqkQ';
 const apiKey = 'AIzaSyBLFucdHwI51bvInRnmig4Tl2fglpqYffk';
