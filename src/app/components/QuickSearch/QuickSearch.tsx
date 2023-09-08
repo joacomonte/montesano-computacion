@@ -27,7 +27,7 @@ const QuickSearch: FC<QuickSearchProps> = ({ data }) => {
     <div className={styles.componentContainer} ref={divRef}>
       <input
         type="text"
-        placeholder="Quick Search..."
+        placeholder="Busqueda"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         className={styles.searchInput}

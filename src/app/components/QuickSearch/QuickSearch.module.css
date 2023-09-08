@@ -1,12 +1,23 @@
 /* Search.module.css */
 
 .componentContainer{
-  position: relative;
+  position: absolute;
+  right: 5vw;
+  width: 25vw;
+  font-size: medium;
+
+}
+
+@media (max-width: 768px) {
+  .componentContainer {
+    width: 100px;
+    font-size: small;
+  }
 }
 
 .searchInput {
-
-  width: 200px;
+  font-size: inherit;
+  width: 100%;
   padding: 10px;
   border: 1px solid #444444;
   border-radius: 4px;
@@ -25,6 +36,7 @@
   flex-direction: column;
   gap: 10px;
   position: absolute;
+  right: 0;           /* Added this to ensure the expansion is to the left */
   list-style: none;
   background-color: rgba(13, 13, 13, 0.7);
   backdrop-filter: blur(5px);
@@ -33,6 +45,15 @@
   z-index: 5;
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .cardList {
+    width: 300px;
+    font-size: small;
+  }
+}
+
+
 
 .card {
   cursor: pointer;

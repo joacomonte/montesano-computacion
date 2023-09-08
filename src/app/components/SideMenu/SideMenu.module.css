@@ -1,23 +1,35 @@
+
+/* Styles for mobile devices */
+
 .sideMenu {
     position: fixed;
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    margin: 15px;
-    padding: 15px;
+    margin: 17px 15px;
+    padding: 5px 15px;
     transition: border 0.3s ease, border-radius 0.3s ease; 
     border: 1px solid transparent; 
     border-radius: 12px;
-    background-color: rgba(13, 13, 13, 0.7);
+    background-color: rgba(13, 13, 13, 0.901);
     backdrop-filter: blur(5px);
     z-index: 6;
-
+    overflow-y: auto;
 }
 
 .sideMenu:hover {
     border: 1px solid grey; 
     border-radius: 20px;
 }
+
+@media (max-width: 768px) {
+    .sideMenu {
+        border: 1px solid grey; 
+        border-radius: 20px;
+    }
+}
+
+
 
 .menuTitle {
     margin: 5px 0;

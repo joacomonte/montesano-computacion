@@ -23,8 +23,13 @@ const SideMenu = ({ data }: SideMenuProps) => {
 
   return (
     <aside ref={divRef} className={style.sideMenu}>
-      {!isMenuOpen && <div className={style.menuTitle} onClick={() => toggleMenu()}>Menu</div>}
-      {isMenuOpen && <div className={style.menuTitle} onClick={() => toggleMenu()}>X</div>}
+      <div
+        className={style.menuTitle}
+        onClick={() => toggleMenu()}
+      >
+        {isMenuOpen ? "X" : "Menu"}
+      </div>
+
       {isMenuOpen &&
         data.map((category) => (
           <MenuItem key={category.id} {...category} depth={0} />
