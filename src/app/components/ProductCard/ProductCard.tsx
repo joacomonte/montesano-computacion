@@ -14,8 +14,16 @@ const ProductCard: React.FC<ProductProps> = ({ title, img, price, stock }) => {
     <div className={styles.card}>
       <h2>{title}</h2>
       <div className={styles.cardImg}>
-      {img && img.trim() !== "" ? (
-        <Image src={img} alt="Placeholder" fill sizes="300px"></Image>
+        {img && img.trim() !== "" ? (
+          <Image
+            src={img}
+            alt="Placeholder"
+            sizes="500px"
+            fill
+            style={{
+              objectFit: 'contain',
+            }}
+          ></Image>
         ) : (
           <div className={styles.error}>Image not available</div>
         )}
