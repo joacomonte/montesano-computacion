@@ -29,6 +29,7 @@
 }
 .searchInput:focus {
   outline: 2px solid #b1b1b1;; /* Change this to your desired focus border color */
+  touch-action: manipulation;
 }
 
 .cardList {

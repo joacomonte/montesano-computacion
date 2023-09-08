@@ -9,7 +9,14 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Montesano Computacion",
   description: "Developed by Montech",
+  //to avoid zoom on inputs
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
 };
+
 
 export default async function RootLayout({children,}: {children: React.ReactNode;}) {
 
