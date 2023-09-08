@@ -8,14 +8,22 @@
 }
 
 .productsContainer{
-  width: 100%;
+  width: 80vw;
 
-  margin-top: 50px;
+  margin-top: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 50px;
+}
+
+@media (max-width: 768px) {
+  .productsContainer {
+    width: 100%;
+    gap: 20px;
+    font-size: small;
+  }
 }
 
 
