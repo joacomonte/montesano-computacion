@@ -36,7 +36,7 @@ const QuickSearch: FC<QuickSearchProps> = ({ data }) => {
         <ul className={styles.cardList}>
           {filteredData.slice(0, 3).map((product, index) => (
             <li key={product[0]} className={styles.card}>
-              {product[0]}
+              {product[0]} <b>{product[1]}</b>
             </li>
           ))}
         </ul>
