@@ -6,7 +6,6 @@
   padding: 20px 10px;
   min-height: 100vh;
   margin-top: 80px;
-  width: 100%;
 }
 
 .productsContainer{
@@ -40,8 +39,9 @@
 }
 
 .carrouesellContainer{
+  width: 90vw;
   margin: 50px 0;
-  width: 100%;
+
 }
 
 .carrousell{
@@ -69,11 +69,11 @@
 }
 
 .carrousell::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
 }
 
 .carrousell::-webkit-scrollbar-thumb {
-  background: rgb(188, 188, 188);
-  border-radius: 10px;
+  background: rgb(201, 201, 201);
+  border-radius: 5px;
 }

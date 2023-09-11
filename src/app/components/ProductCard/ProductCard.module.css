@@ -11,7 +11,7 @@
   align-items: flex-start;
   gap: 16px;
   height: 400px;
-  width: 400px;
+  min-width: 280px;
   transition: transform 0.3s ease;
 }
 
@@ -45,7 +45,7 @@
   outline: 0;
   cursor: pointer;
   border: none;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   height: 2.5rem;
   line-height: 0.5rem;
   border-radius: 7px;
@@ -99,7 +99,7 @@
     margin: 0;
   }
   .card h3 {
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-weight: 700;
   }
 
