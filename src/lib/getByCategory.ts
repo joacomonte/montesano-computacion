@@ -3,9 +3,11 @@
 import { Product, ProductsList } from "@/types/products";
 
 export async function getByCategory(category: string, subcategory: string): Promise<ProductsList> {
-  const sheetId = "1r74G-LQCSEDh5_O6mnDecMoi8BMvzStdt4rNLu9zqkQ";
-  const apiKey = "AIzaSyBLFucdHwI51bvInRnmig4Tl2fglpqYffk";
-  const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/productList?key=${apiKey}`;
+
+  const SHEET_ID = process.env.API_URL;
+  const API_KEY = process.env.API_URL;
+
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/productList?key=${API_KEY}`;
   const res = await fetch(url, {
     next: { revalidate: 60 },
   });
