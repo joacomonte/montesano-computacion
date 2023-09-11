@@ -36,39 +36,40 @@ a {
   text-decoration: none;
 }
 
+.menuBarContainer{
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
 .layoutContainer {
   position: fixed;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 100%;
-  height: 80px;
-
-  padding: 0 30px;
-  /* padding-right: 30px; */
+  width: 80vw;
+  height: 100px;
   background-color: white;
-
-  justify-items: center;
+  justify-self: center;
   align-items: center;
-
   overflow: visible;
-  z-index: 6;
+
 }
 
 .layoutContainer > :first-child {
-  position: absolute;
-
-  top: 0;
-  left: 15px;
-
-  margin-top: 17px;
-  z-index: 10;
+  justify-self: start;
+  align-self: center;
+  text-align: center;
+  grid-column: 1;
 }
 
 .layoutContainer > :nth-child(2) {
   justify-self: center;
   align-items: center;
   grid-column: 2;
-
 
 }
 .layoutContainer > :nth-child(3) {

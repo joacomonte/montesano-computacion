@@ -1,22 +1,39 @@
 "use client";
-import React, { FC, useRef, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import styles from "./QuickSearch.module.css";
 // Make sure to replace with the correct path
-import { ProductsList } from "@/app/types/products";
+import { Product, ProductsList } from "@/app/types/products";
 import useFilterData from "@/app/hooks/useFilterData";
 import useClickOutside from "@/app/hooks/useOutsideClick";
+import { getData } from "@/app/lib/getAllData";
 
 interface QuickSearchProps {
   data?: ProductsList;
 }
 
-const QuickSearch: FC<QuickSearchProps> = ({ data }) => {
+const QuickSearch: FC<QuickSearchProps> = () => {
+
+
+  const [data, setData] = useState<ProductsList>();
+
   const divRef = useRef(null);
 
   const [searchTerm, setSearchTerm] = useState("");
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const filteredData = data ? useFilterData(data, searchTerm) : { filteredData: [] };
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await getData();
+      setData(result);
+      console.log('this', result);
+    };
+
+    fetchData();
+  }, []);
+
+
+  const filterResult = useFilterData(data || [], searchTerm);
+  const filteredData: Product[] = filterResult.filteredData;
+
 
   const clearData = () => {
     setSearchTerm("");
@@ -51,5 +68,6 @@ const QuickSearch: FC<QuickSearchProps> = ({ data }) => {
     </div>
   );
 };
+
 
 export default QuickSearch;

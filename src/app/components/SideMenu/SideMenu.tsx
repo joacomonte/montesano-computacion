@@ -1,15 +1,15 @@
-'use client'
+"use client";
 import React, { useState, useRef, useEffect } from "react";
-import {SideMenuProps } from "./interfaces"; // Make sure to import the correct path to your interfaces
+import { SideMenuProps } from "./interfaces"; // Make sure to import the correct path to your interfaces
 import style from "./SideMenu.module.css";
 import MenuItem from "./MenuItem/MenuItem";
 import useClickOutside from "@/app/hooks/useOutsideClick";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import { Nova_Oval } from "next/font/google";
 
 const SideMenu = ({ data }: SideMenuProps) => {
-
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -30,21 +30,34 @@ const SideMenu = ({ data }: SideMenuProps) => {
   useClickOutside(divRef, closeMenu);
 
   return (
-    <aside ref={divRef} className={style.sideMenu}>
-      <div
-        className={style.menuTitle}
-        onClick={() => toggleMenu()}
-      >
-        {isMenuOpen ? "Cerrar" : "Menu"}
-      </div>
+    <div className={style.sideMenuContainer}>
+      <button className={style.burgerButton} onClick={toggleMenu}>
+        <div className={style.logoContainer}>
+          <Image
+            src="/menuIcon.svg"
+            alt="Logo"
+            sizes="48px"
+            fill
+            style={{
+              objectFit: "contain",
+            }}
+          />
+        </div>
+      </button>
 
-      {isMenuOpen &&
-        data.map((category) => (
-          <MenuItem key={category.id} {...category}/>
-        ))}
-    </aside>
+      <nav
+        ref={divRef}
+        className={`${style.sideMenu} ${isMenuOpen ? style.open : ""}`}
+      >
+        <div className={style.menuTitle} onClick={toggleMenu}>
+          Cerrar
+        </div>
+
+        {isMenuOpen &&
+          data.map((category) => <MenuItem key={category.id} {...category} />)}
+      </nav>
+    </div>
   );
 };
-
 
 export default SideMenu;

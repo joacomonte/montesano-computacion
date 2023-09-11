@@ -27,6 +27,8 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <div className="menuBarContainer">
+
         <div className="layoutContainer">
           <SideMenu data={menuData} />
           <div className="logoContainer">
@@ -38,6 +40,7 @@ export default async function RootLayout({
             }} />
           </div>
           <QuickSearch />
+        </div>
         </div>
 
         {children}

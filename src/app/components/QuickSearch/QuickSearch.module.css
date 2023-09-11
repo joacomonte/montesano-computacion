@@ -1,6 +1,6 @@
 
 .componentContainer{
-  width: 25vw;
+  width: 60%;
   font-size: medium;
 }
 
@@ -41,7 +41,8 @@
   padding: 10px;
   border-radius: 10px;
   z-index: 5;
-  width: 100%;
+  width: 50vw;
+  max-width: 400px;
 }
 
 @media (max-width: 768px) {

@@ -5,9 +5,10 @@
   padding: 15px 30px;
   gap: 12px;
   cursor: pointer;
-  background-color: #00c25a;
+  background-color: #28CB7D;
   transition: filter 0.3s ease;
   font-weight: 600;
+  box-shadow: inset -15px 0 10px -10px rgba(0, 0, 0, 0.2);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 }
@@ -24,7 +25,7 @@
   padding: 10px 0;
   gap: 15px;
   cursor: pointer;
-  background-color: #01ae52;
+  background-color: #28CB7D;
   font-weight: 400;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
@@ -35,5 +36,5 @@
 }
 
 .open {
-  background-color: #01ae52; /* You can adjust this value for the desired darkness */
+  background-color: #28CB7D; /* You can adjust this value for the desired darkness */
 }
