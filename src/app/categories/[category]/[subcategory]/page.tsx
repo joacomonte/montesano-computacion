@@ -1,10 +1,11 @@
-"use client";
+
 import ProductCard from "@/components/ProductCard/ProductCard";
 import useFilterByCategory from "@/hooks/useFilterByCategory";
 import { getData } from "@/lib/getAllData";
 import { ProductsList } from "@/types/products";
 import { useEffect, useState } from "react";
 import styles from "@/app/page.module.css"
+import { getByCategory } from "@/lib/getByCategory";
 
 
 
@@ -15,30 +16,22 @@ type Params = {
   };
 };
 
-export default function Subcategory({
+export default async function Subcategory({
   params: { category, subcategory },
 }: Params) {
-  const [data, setData] = useState<ProductsList>();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await getData();
-      setData(result);
-      console.log("this", result);
-    };
+  let data = await getByCategory(category, subcategory);
 
-    fetchData();
-  }, []);
+  console.log(data);
 
-  const filteredData = useFilterByCategory(data || [], category, subcategory);
 
   return (
-    <div style={{ marginTop: "300px" }}>
-      <h1>
+    <div style={{ marginTop: "150px", display:'flex', flexDirection:'column', alignItems:'center', width: '100%' }}>
+      <h1 style={{textAlign: 'center', margin: '50px'}}>
         categoria {category} y subcategoria {subcategory}
       </h1>
       <div className={styles.productsContainer}>
-        {filteredData.map(([productName, productPrice, stock, img], index) => (
+        {data.map(([productName, productPrice, stock, img], index) => (
           <ProductCard
             key={index}
             title={productName}

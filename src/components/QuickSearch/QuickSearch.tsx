@@ -24,7 +24,6 @@ const QuickSearch: FC<QuickSearchProps> = () => {
     const fetchData = async () => {
       const result = await getData();
       setData(result);
-      console.log('this', result);
     };
 
     fetchData();
