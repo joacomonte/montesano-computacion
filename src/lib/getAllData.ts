@@ -3,7 +3,7 @@ import { ProductsList } from "../types/products";
 
 export async function getData(): Promise<ProductsList> {
   const SHEET_ID = process.env.SHEET_ID;
-  const API_KEY = process.env.API_URL;
+  const API_KEY = process.env.API_KEY;
 
   // const sheetId = "1r74G-LQCSEDh5_O6mnDecMoi8BMvzStdt4rNLu9zqkQ";
   // const apiKey = "AIzaSyBLFucdHwI51bvInRnmig4Tl2fglpqYffk";
