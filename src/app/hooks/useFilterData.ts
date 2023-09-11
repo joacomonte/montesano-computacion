@@ -3,13 +3,12 @@
 import { Product, ProductsList } from "../types/products";
 
 export default function useFilterData(data: ProductsList, searchTerm: string) {
+  
   const normalizedTerm = searchTerm.toLowerCase().split(' ');
 
   const filteredData = data
     .filter(row => doesRowMatchSearchTerms(row, normalizedTerm))
     .sort(compareRowSearchTermPosition(searchTerm));
-
-    console.log('hola', filteredData)
   return { filteredData };
 }
 

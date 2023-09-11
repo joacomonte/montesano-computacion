@@ -5,12 +5,12 @@
   align-items: center;
   padding: 20px 10px;
   min-height: 100vh;
+  margin-top: 80px;
+  width: 100%;
 }
 
 .productsContainer{
   width: 90vw;
-
-  margin-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,4 +37,43 @@
   border: 1px solid transparent; /* Adding initial border style */
   border-radius: 0; /* Adding initial border radius */
   background-color: black;
+}
+
+.carrouesellContainer{
+  margin: 50px 0;
+  width: 100%;
+}
+
+.carrousell{
+  width: 100%;
+  height: auto;
+
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+
+  /* background-color: rgb(225, 225, 225); */
+  display: flex;
+  
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+
+  border-radius: 10px;
+  
+  gap: 20px;
+  
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  
+}
+
+.carrousell::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.carrousell::-webkit-scrollbar-thumb {
+  background: rgb(188, 188, 188);
+  border-radius: 10px;
 }
