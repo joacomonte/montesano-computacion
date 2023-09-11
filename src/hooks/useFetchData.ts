@@ -1,20 +1,20 @@
-// hooks/useFetchData.ts
-import { useState, useEffect } from 'react';
-import { Product, ProductsList } from '../types/products';
-import { fetchSheetData } from '../services/fetchSheetData';
+// // hooks/useFetchData.ts
+// import { useState, useEffect } from 'react';
+// import { Product, ProductsList } from '../types/products';
+// // import { fetchSheetData } from '../services/fetchSheetData';
 
-function useFetchData() {
-  const [data, setData] = useState<ProductsList>([]);
+// function useFetchData() {
+//   const [data, setData] = useState<ProductsList>([]);
 
-  useEffect(() => {
-    async function fetchData() {
-      const values = await fetchSheetData();
-      setData(values);
-    }
-    fetchData();
-  }, []);
+//   useEffect(() => {
+//     async function fetchData() {
+//       // const values = await fetchSheetData();
+//       setData(values);
+//     }
+//     fetchData();
+//   }, []);
 
-  return data;
-}
+//   return data;
+// }
 
-export default useFetchData;
+// export default useFetchData;
