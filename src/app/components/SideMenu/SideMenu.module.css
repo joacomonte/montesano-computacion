@@ -50,6 +50,7 @@
   font-size: 20px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
+  box-shadow: inset -15px 0 10px -10px rgba(0, 0, 0, 0.2);
 }
 
 .menuTitle:hover {
