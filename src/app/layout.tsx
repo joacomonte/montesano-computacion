@@ -5,6 +5,7 @@ import SideMenu from "./components/SideMenu/SideMenu";
 import { menuData } from "./data/menuData";
 import Image from "next/image";
 import QuickSearch from "./components/QuickSearch/QuickSearch";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,14 +32,14 @@ export default async function RootLayout({
 
         <div className="layoutContainer">
           <SideMenu data={menuData} />
-          <div className="logoContainer">
+          <Link href={'/'} className="logoContainer">
           <Image src="/mcLogo.svg" alt="Logo"
             sizes="500px"
             fill
             style={{
               objectFit: "contain",
             }} />
-          </div>
+          </Link>
           <QuickSearch />
         </div>
         </div>

@@ -16,7 +16,7 @@
 }
 
 .card:hover {
-  transform: scale(1.03);
+  transform: scale(1.01);
 
 }
 
@@ -51,14 +51,17 @@
   border-radius: 7px;
   font-weight: 400;
   font-size: 16px;
-  background: #009c49;
-  color: #f3f3f3;
+  background: transparent;
+  color: #008e49;
+  border: 1px solid #008e49;
 
   transition: background 0.2s ease, color 0.2s ease;
 }
 
 .card button:hover {
-  background: #007c3a;
+  background: #2CD46B;
+  border: 1px solid #2CD46B;
+  color: white;
 }
 .priceAndButton {
   width: 100%;
