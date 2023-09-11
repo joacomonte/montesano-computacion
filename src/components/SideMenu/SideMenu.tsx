@@ -3,10 +3,9 @@ import React, { useState, useRef, useEffect } from "react";
 import { SideMenuProps } from "./interfaces"; // Make sure to import the correct path to your interfaces
 import style from "./SideMenu.module.css";
 import MenuItem from "./MenuItem/MenuItem";
-import useClickOutside from "@/app/hooks/useOutsideClick";
+import useClickOutside from "@/hooks/useOutsideClick";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { Nova_Oval } from "next/font/google";
 
 const SideMenu = ({ data }: SideMenuProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);

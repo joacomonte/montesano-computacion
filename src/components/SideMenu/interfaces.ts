@@ -1,7 +1,8 @@
 export interface IMenuItemProps {
-    id: number;
+    id: string;
     label: string;
     children?: IMenuItemProps[]; 
+    href?: string | null;
   }
   
   export interface SideMenuProps {

@@ -2,10 +2,10 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import styles from "./QuickSearch.module.css";
 // Make sure to replace with the correct path
-import { Product, ProductsList } from "@/app/types/products";
-import useFilterData from "@/app/hooks/useFilterData";
-import useClickOutside from "@/app/hooks/useOutsideClick";
-import { getData } from "@/app/lib/getAllData";
+import {ProductsList } from "@/types/products";
+import useFilterData from "@/hooks/useFilterData";
+import useClickOutside from "@/hooks/useOutsideClick";
+import { getData } from "@/lib/getAllData";
 
 interface QuickSearchProps {
   data?: ProductsList;
@@ -31,8 +31,7 @@ const QuickSearch: FC<QuickSearchProps> = () => {
   }, []);
 
 
-  const filterResult = useFilterData(data || [], searchTerm);
-  const filteredData: Product[] = filterResult.filteredData;
+  const filteredData = useFilterData(data || [], searchTerm);
 
 
   const clearData = () => {

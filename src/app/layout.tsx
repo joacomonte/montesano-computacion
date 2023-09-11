@@ -1,10 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import SideMenu from "./components/SideMenu/SideMenu";
-import { menuData } from "./data/menuData";
+import SideMenu from "../components/SideMenu/SideMenu";
+import { menuData } from "../data/menuData";
 import Image from "next/image";
-import QuickSearch from "./components/QuickSearch/QuickSearch";
+import QuickSearch from "../components/QuickSearch/QuickSearch";
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -31,7 +31,7 @@ export default async function RootLayout({
         <div className="menuBarContainer">
 
         <div className="layoutContainer">
-          <SideMenu data={menuData} />
+        <SideMenu data={menuData} />
           <Link href={'/'} className="logoContainer">
           <Image src="/mcLogo.svg" alt="Logo"
             sizes="500px"

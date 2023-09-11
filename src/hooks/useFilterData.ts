@@ -9,7 +9,7 @@ export default function useFilterData(data: ProductsList, searchTerm: string) {
   const filteredData = data
     .filter(row => doesRowMatchSearchTerms(row, normalizedTerm))
     .sort(compareRowSearchTermPosition(searchTerm));
-  return { filteredData };
+  return filteredData;
 }
 
 function doesRowMatchSearchTerms(product: Product, searchTerms: string[]): boolean {
