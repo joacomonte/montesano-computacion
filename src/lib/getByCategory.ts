@@ -4,7 +4,7 @@ import { Product, ProductsList } from "@/types/products";
 
 export async function getByCategory(category: string, subcategory: string): Promise<ProductsList> {
 
-  const SHEET_ID = process.env.API_URL;
+  const SHEET_ID = process.env.SHEET_ID;
   const API_KEY = process.env.API_URL;
 
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/productList?key=${API_KEY}`;
