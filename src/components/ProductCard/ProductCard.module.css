@@ -11,7 +11,7 @@
 
   height: 400px;
 
-  min-width: 250px;
+  min-width: 300px;
   width: 90vw;
   max-width: 330px;
   transition: transform 0.3s ease;
@@ -19,6 +19,7 @@
 
 @media (max-width: 768px) {
   .card {
+    min-width: 250px;
     height: 350px;
     font-size: 12px;
     padding: 15px 15px;
