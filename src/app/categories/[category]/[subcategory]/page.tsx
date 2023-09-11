@@ -22,9 +22,6 @@ export default async function Subcategory({
 
   let data = await getByCategory(category, subcategory);
 
-  console.log(data);
-
-
   return (
     <div style={{ marginTop: "150px", display:'flex', flexDirection:'column', alignItems:'center', width: '100%' }}>
       <h1 style={{textAlign: 'center', margin: '50px'}}>
