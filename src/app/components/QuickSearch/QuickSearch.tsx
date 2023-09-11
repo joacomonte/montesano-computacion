@@ -7,7 +7,7 @@ import useFilterData from "@/app/hooks/useFilterData";
 import useClickOutside from "@/app/hooks/useOutsideClick";
 
 interface QuickSearchProps {
-  data: ProductsList;
+  data?: ProductsList;
 }
 
 const QuickSearch: FC<QuickSearchProps> = ({ data }) => {
@@ -15,7 +15,8 @@ const QuickSearch: FC<QuickSearchProps> = ({ data }) => {
 
   const [searchTerm, setSearchTerm] = useState("");
 
-  const { filteredData } = useFilterData(data, searchTerm);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const filteredData = data ? useFilterData(data, searchTerm) : { filteredData: [] };
 
   const clearData = () => {
     setSearchTerm("");
@@ -33,13 +34,19 @@ const QuickSearch: FC<QuickSearchProps> = ({ data }) => {
         className={styles.searchInput}
       />
       {searchTerm && searchTerm.trim() !== "" ? (
-        <ul className={styles.cardList}>
-          {filteredData.slice(0, 3).map((product, index) => (
-            <li key={product[0]} className={styles.card}>
-              {product[0]} <b>{product[1]}</b>
-            </li>
-          ))}
-        </ul>
+        filteredData.length > 0 ? (
+          <ul className={styles.cardList}>
+            {filteredData.slice(0, 3).map((product, index) => (
+              <li key={product[0]} className={styles.card}>
+                {product[0]} <b>{product[1]}</b>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <ul className={styles.cardList}>
+            <li className={styles.card}>Sin resultados</li>
+          </ul>
+        )
       ) : null}
     </div>
   );

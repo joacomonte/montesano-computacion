@@ -1,7 +1,7 @@
 .card {
   position: relative;
-  background-color: #242424;
-  border: 1px solid #252525;
+  background-color: var(--background-product-card);
+  /* border: 1px solid #252525; */
   padding: 20px 30px;
 
   margin: 16px 0;
@@ -12,6 +12,12 @@
   gap: 16px;
   height: 400px;
   width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+
 }
 
 .card h2 {

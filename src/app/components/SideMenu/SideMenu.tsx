@@ -1,24 +1,32 @@
 'use client'
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {SideMenuProps } from "./interfaces"; // Make sure to import the correct path to your interfaces
 import style from "./SideMenu.module.css";
 import MenuItem from "./MenuItem/MenuItem";
 import useClickOutside from "@/app/hooks/useOutsideClick";
+import { usePathname } from 'next/navigation';
 
 const SideMenu = ({ data }: SideMenuProps) => {
 
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
-  const divRef = useRef(null);
 
-  const toggleMenu = (open: boolean = !isMenuOpen) => {
-    setIsMenuOpen(open);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
 
+  // to close the menu when change route
+  const pathname = usePathname();
+  useEffect(() => {
+    closeMenu(); // close the menu whenever the pathname or searchParams changes
+  }, [pathname]);
+
+  // to close the menu when click outside
+  const divRef = useRef(null);
   useClickOutside(divRef, closeMenu);
 
   return (
@@ -27,12 +35,12 @@ const SideMenu = ({ data }: SideMenuProps) => {
         className={style.menuTitle}
         onClick={() => toggleMenu()}
       >
-        {isMenuOpen ? "X" : "Menu"}
+        {isMenuOpen ? "Cerrar" : "Menu"}
       </div>
 
       {isMenuOpen &&
         data.map((category) => (
-          <MenuItem key={category.id} {...category} depth={0} />
+          <MenuItem key={category.id} {...category}/>
         ))}
     </aside>
   );

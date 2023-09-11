@@ -2,53 +2,33 @@
 /* Styles for mobile devices */
 
 .sideMenu {
-    position: fixed;
+    position: relative;
     display: flex;
+    justify-content: center;
+    text-align: start;
     flex-direction: column;
     cursor: pointer;
-    margin: 15px 15px;
-    padding: 5px 15px;
-    transition: border 0.3s ease, border-radius 0.3s ease; 
-    border: 1px solid transparent; 
-    border-radius: 12px;
-    background-color: rgba(13, 13, 13, 0.901);
+    border-radius: 10px;
+    background-color: #00c25a;
+    color: white;
     backdrop-filter: blur(5px);
     z-index: 6;
 
-    max-height: 80vh;
+    min-height: 45px;
+
 
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
 }
-
-.sideMenu:hover {
-    border: 1px solid grey; 
-    border-radius: 20px;
-}
-
-@media (max-width: 768px) {
-    .sideMenu {
-        border: 1px solid grey; 
-        border-radius: 20px;
-    }
-}
-
-
 
 .menuTitle {
-    margin: 5px 0;
+    padding: 0 20px;
     cursor: pointer;
     font-size: 20px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
 }
 
-.menuTitle span {
-    display: none;
-}
-
-.menuTitle.open span.x {
-    display: inline;
-}
-
-.menuTitle:not(.open) span.menu {
-    display: inline;
-}

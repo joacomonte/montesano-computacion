@@ -33,7 +33,7 @@ export default async function Home() {
   return (
     <div className={styles.pageContainer}>
       <main className={styles.main}>
-        <QuickSearch data={data} />
+        {/* <QuickSearch data={data} /> */}
         <div className={styles.productsContainer}>
           {data.map((product, index) => (
             <ProductCard
@@ -41,7 +41,7 @@ export default async function Home() {
               title={product[0] || "Sin titulo"}
               img={product[3] || ''}
               price={product[1] || "Sin precio"}
-              stock={product[2] || "Stock desconocido"}
+              stock={product[2] || "Consultar disponibilidad"}
             />
           ))}
         </div>

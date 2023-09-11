@@ -1,24 +1,39 @@
 .menuItem {
-    margin: 5px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Adding transition for smooth animation */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px 30px;
+  gap: 12px;
+  cursor: pointer;
+  background-color: #00c25a;
+  transition: filter 0.3s ease;
+  font-weight: 600;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
-
-/* style.css */
-
-.menuLabel {
-    display: inline-block;  /* so that the block responds to content width */
-    padding: 10px 15px;  /* some padding for better visual effect */
-    border-radius: 4px;  /* rounding corners for aesthetics */
-    cursor: pointer;  /* indicate it's clickable */
-    transition: border 0.3s ease, border-radius 0.3s ease; /* Adding transitions for smooth animations */
-    border: 1px solid transparent; /* Adding initial border style */
-    border-radius: 0; /* Adding initial border radius */
+.menuItem:hover {
+  filter: brightness(0.9);
 }
 
-.menuLabel:hover {
-    border: 1px solid grey; /* Adding a border on hover */
-    border-radius: 10px; /* Adding border radius on hover */
+.lastItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 0;
+  gap: 15px;
+  cursor: pointer;
+  background-color: #01ae52;
+  font-weight: 400;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.3s ease;
+}
+.lastItem:hover {
+  transform: scale(1.03);
 }
 
+.open {
+  background-color: #01ae52; /* You can adjust this value for the desired darkness */
+}
