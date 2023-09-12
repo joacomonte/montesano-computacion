@@ -8,23 +8,22 @@ import { useEffect, useState } from "react";
 
 export default function SearchPage() {
   const [data, setData] = useState<ProductsList>();
+  const [searchTerm, setSearchTerm] = useState("");
 
-  //   const [searchTerm, setSearchTerm] = useState("");
+  const search = useSearchParams().get("query") || "";
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await getData();
       setData(result);
     };
-
     fetchData();
+    setSearchTerm(search);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const searchParams = useSearchParams();
 
-  const search = searchParams.get("query") || "";
-
-  const filteredData = useFilterData(data || [], search);
+  const filteredData = useFilterData(data || [], searchTerm);
 
   return (
     <div
@@ -36,7 +35,7 @@ export default function SearchPage() {
         width: "100%",
       }}
     >
-      {/* <input
+      <input
         //   className={styles.searchInput}
         id="searchInput"
         type="text"
@@ -44,8 +43,8 @@ export default function SearchPage() {
         aria-label="Busqueda"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-      /> */}
-      <h1>{data ? `Resultados de: ${search}` : "sin resultados"}</h1>
+      />
+      {/* <h1>{data ? `Resultados de: ${searchTerm}` : "sin resultados"}</h1> */}
       <h3
         style={{
           flex: 1,

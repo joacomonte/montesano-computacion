@@ -23,6 +23,7 @@
   background-color: rgb(244, 244, 244);
   z-index: 5;
   box-shadow: inset 0 0 6px #dddddd;
+  outline: none;
 }
 .searchInput:focus {
   touch-action: manipulation;
