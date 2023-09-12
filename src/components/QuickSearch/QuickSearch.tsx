@@ -6,7 +6,7 @@ import useFilterData from "@/hooks/useFilterData";
 import useClickOutside from "@/hooks/useOutsideClick";
 import { getData } from "@/lib/getAllData";
 import Link from "next/link";
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 import index from "@/globals";
 
 interface QuickSearchProps {
@@ -14,7 +14,6 @@ interface QuickSearchProps {
 }
 
 const QuickSearch: FC<QuickSearchProps> = () => {
-
   const router = useRouter();
 
   const [data, setData] = useState<ProductsList>();
@@ -58,16 +57,16 @@ const QuickSearch: FC<QuickSearchProps> = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button
-          type="submit"
-          className={styles.searchIcon}
-          aria-label="Search"
-          role="button"
-        >
-          &#128269;
-        </button>
       </form>
-      <button className={styles.searchIcon}>&#128269;</button>
+      <button
+        type="submit"
+        className={styles.searchIcon}
+        aria-label="Search"
+        role="button"
+        onClick={handleSearch}
+      >
+        &#128269;
+      </button>
       {searchTerm && searchTerm.trim() !== "" ? (
         filteredData.length > 0 ? (
           <ul className={styles.cardList}>

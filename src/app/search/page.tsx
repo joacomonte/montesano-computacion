@@ -60,7 +60,7 @@ export default function SearchPage() {
         {data ? (
           filteredData
             .slice(0, 15)
-            .map((product) => <span key={product[index.ID]}> {product[index.TITLE]} </span>)
+            .map((product) => <span key={product[index.ID]}> {product[index.TITLE]} - {product[index.PRICE]}</span>)
         ) : (
           <span>Sin resultados</span>
         )}

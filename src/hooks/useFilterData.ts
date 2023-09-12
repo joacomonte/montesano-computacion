@@ -9,7 +9,8 @@ export default function useFilterData(data: ProductsList, searchTerm: string) {
 
   const filteredData = data
     .filter(row => doesRowMatchSearchTerms(row, normalizedTerm))
-    .sort(compareRowSearchTermPosition(searchTerm));
+    .sort(compareRowByPrice);
+    // .sort(compareRowSearchTermPosition(searchTerm));
   return filteredData;
 }
 
@@ -17,16 +18,32 @@ function doesRowMatchSearchTerms(product: Product, searchTerms: string[]): boole
   return searchTerms.every(term => product[index.TITLE]?.toLowerCase().includes(term));
 }
 
-function compareRowSearchTermPosition(searchTerm: string) {
-  return (a: Product, b: Product): number => {
-    const indexA = getTermIndexInRow(a, searchTerm);
-    const indexB = getTermIndexInRow(b, searchTerm);
+function compareRowByPrice(a: Product, b: Product): number {
+  const priceA = parseFloat(cleanPrice(a[index.PRICE] || ""));
+  const priceB = parseFloat(cleanPrice(b[index.PRICE] || ""));
     
-    return indexA - indexB;
-  };
+  return priceA - priceB;
 }
 
-function getTermIndexInRow(row: Product, searchTerm: string): number {
-  return row[index.TITLE]?.toLowerCase().indexOf(searchTerm) ?? Infinity;
+function cleanPrice(price: string): string {
+  // If price is null or undefined, return "0"
+  if (!price) return "0";
+
+  // Remove all non-digit characters except for the decimal point
+  return price.replace(/[^\d.]/g, '');
 }
+
+// function compareRowSearchTermPosition(searchTerm: string) {
+//   return (a: Product, b: Product): number => {
+//     const indexA = getTermIndexInRow(a, searchTerm);
+//     const indexB = getTermIndexInRow(b, searchTerm);
+    
+//     return indexA - indexB;
+//   };
+// }
+
+
+// function getTermIndexInRow(row: Product, searchTerm: string): number {
+//   return row[index.TITLE]?.toLowerCase().indexOf(searchTerm) ?? Infinity;
+// }
 
