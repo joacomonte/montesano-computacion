@@ -1,18 +1,15 @@
-'use client'
+"use client";
 
 import useFilterData from "@/hooks/useFilterData";
 import { getData } from "@/lib/getAllData";
 import { ProductsList } from "@/types/products";
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function SearchPage() {
-
   const [data, setData] = useState<ProductsList>();
 
-  const [searchTerm, setSearchTerm] = useState("");
-
-
+  //   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,9 +20,9 @@ export default function SearchPage() {
     fetchData();
   }, []);
 
-  const searchParams = useSearchParams()
- 
-  const search = searchParams.get('query') || '';
+  const searchParams = useSearchParams();
+
+  const search = searchParams.get("query") || "";
 
   const filteredData = useFilterData(data || [], search);
 
@@ -48,14 +45,25 @@ export default function SearchPage() {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       /> */}
-      <h1>
-        Resultados de: {search}
-      </h1>
-      <h3 style={{flex: 1, display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", textAlign: "center", margin: "50px" }}>
-        {data &&
-            filteredData.slice(0, 15).map((product) => (
-            <span key={product[0]}> {product[1]} </span>
-          ))}
+      <h1>{data ? `Resultados de: ${search}` : "sin resultados"}</h1>
+      <h3
+        style={{
+          flex: 1,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          textAlign: "center",
+          margin: "50px",
+        }}
+      >
+        {data ? (
+          filteredData
+            .slice(0, 15)
+            .map((product) => <span key={product[0]}> {product[1]} </span>)
+        ) : (
+          <span>Sin resultados</span>
+        )}
       </h3>
     </div>
   );

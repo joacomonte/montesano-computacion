@@ -42,6 +42,7 @@ const QuickSearch: FC<QuickSearchProps> = () => {
   const handleSearch = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     router.push(`/search?query=${searchTerm}`);
+    clearData();
   };
 
   return (
