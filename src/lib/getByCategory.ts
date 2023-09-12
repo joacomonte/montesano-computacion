@@ -33,10 +33,10 @@ function isMatchingCategory(
   const normalizedSubCategory = subcategory.toLowerCase();
 
   if (normalizedSubCategory === "todos") {
-    return product[4]?.toLowerCase() === normalizedCategory;
+    return product[5]?.toLowerCase() === normalizedCategory;
   }
   return (
-    product[4]?.toLowerCase() === normalizedCategory &&
-    product[5]?.toLowerCase() === normalizedSubCategory
+    product[5]?.toLowerCase() === normalizedCategory &&
+    product[6]?.toLowerCase() === normalizedSubCategory
   );
 }

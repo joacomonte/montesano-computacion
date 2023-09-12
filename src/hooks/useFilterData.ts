@@ -13,7 +13,7 @@ export default function useFilterData(data: ProductsList, searchTerm: string) {
 }
 
 function doesRowMatchSearchTerms(product: Product, searchTerms: string[]): boolean {
-  return searchTerms.every(term => product[0]?.toLowerCase().includes(term));
+  return searchTerms.every(term => product[1]?.toLowerCase().includes(term));
 }
 
 function compareRowSearchTermPosition(searchTerm: string) {
@@ -26,7 +26,7 @@ function compareRowSearchTermPosition(searchTerm: string) {
 }
 
 function getTermIndexInRow(row: Product, searchTerm: string): number {
-  return row[0]?.toLowerCase().indexOf(searchTerm) ?? Infinity;
+  return row[1]?.toLowerCase().indexOf(searchTerm) ?? Infinity;
 }
 
 

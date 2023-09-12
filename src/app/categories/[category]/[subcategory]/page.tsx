@@ -28,9 +28,9 @@ export default async function Subcategory({
         categoria {category} y subcategoria {subcategory}
       </h1>
       <div className={styles.productsContainer}>
-        {data.map(([productName, productPrice, stock, img], index) => (
+        {data.map(([id, productName, productPrice, stock, img]) => (
           <ProductCard
-            key={index}
+            key={id}
             title={productName}
             img={img || ""}
             price={productPrice }

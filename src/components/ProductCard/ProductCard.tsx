@@ -11,6 +11,7 @@ interface ProductProps {
 }
 
 const ProductCard: React.FC<ProductProps> = ({ title, img, price, stock }) => {
+  
   const dialogRef: RefObject<HTMLDialogElement> = createRef();
 
   function openDialog() {

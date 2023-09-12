@@ -2,18 +2,17 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import styles from "./QuickSearch.module.css";
 // Make sure to replace with the correct path
-import {ProductsList } from "@/types/products";
+import { ProductsList } from "@/types/products";
 import useFilterData from "@/hooks/useFilterData";
 import useClickOutside from "@/hooks/useOutsideClick";
 import { getData } from "@/lib/getAllData";
+import Link from "next/link";
 
 interface QuickSearchProps {
   data?: ProductsList;
 }
 
 const QuickSearch: FC<QuickSearchProps> = () => {
-
-
   const [data, setData] = useState<ProductsList>();
 
   const divRef = useRef(null);
@@ -29,9 +28,7 @@ const QuickSearch: FC<QuickSearchProps> = () => {
     fetchData();
   }, []);
 
-
   const filteredData = useFilterData(data || [], searchTerm);
-
 
   const clearData = () => {
     setSearchTerm("");
@@ -51,9 +48,11 @@ const QuickSearch: FC<QuickSearchProps> = () => {
       {searchTerm && searchTerm.trim() !== "" ? (
         filteredData.length > 0 ? (
           <ul className={styles.cardList}>
-            {filteredData.slice(0, 3).map((product, index) => (
+            {filteredData.slice(0, 3).map((product) => (
               <li key={product[0]} className={styles.card}>
-                {product[0]} <b>{product[1]}</b>
+                <Link href={`/product/${product[0]}`}>
+                  {product[1]} <b>{product[2]}</b>
+                </Link>
               </li>
             ))}
           </ul>
@@ -66,6 +65,5 @@ const QuickSearch: FC<QuickSearchProps> = () => {
     </div>
   );
 };
-
 
 export default QuickSearch;

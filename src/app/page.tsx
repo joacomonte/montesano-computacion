@@ -15,11 +15,11 @@ export default async function Home() {
           <div className={styles.carrousell}>
             {data.map((product, index) => (
               <ProductCard
-                key={index}
-                title={product[0]}
-                img={product[3]}
-                price={product[1] }
-                stock={product[2]}
+                key={product[0]}
+                title={product[1]}
+                img={product[4]}
+                price={product[2] }
+                stock={product[3]}
               />
             ))}
           </div>
@@ -28,13 +28,13 @@ export default async function Home() {
         <div className={styles.carrouesellContainer}>
           <h1 style={{marginLeft:'10px'}}>En oferta!</h1>
           <div className={styles.carrousell}>
-            {data.map((product, index) => (
+            {data.map((product) => (
               <ProductCard
-                key={index}
-                title={product[0]}
-                img={product[3]}
-                price={product[1]}
-                stock={product[2]}
+                key={product[0]}
+                title={product[1]}
+                img={product[4]}
+                price={product[2]}
+                stock={product[3]}
               />
             ))}
           </div>
