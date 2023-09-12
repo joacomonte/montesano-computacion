@@ -10,7 +10,7 @@ export async function getByCategory(category: string, subcategory: string): Prom
 
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/productList?key=${API_KEY}`;
   const res = await fetch(url, {
-    next: { revalidate: 60 },
+    next: { revalidate: 30 },
   });
 
   if (!res.ok) {

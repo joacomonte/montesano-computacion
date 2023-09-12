@@ -20,10 +20,11 @@ interface ProductProps {
   title?: string | null;
   img?: string | null;
   price?: string | null;
+  oldPrice?: string | null;
   stock?: string | null;
 }
 
-const ProductCard: React.FC<ProductProps> = ({ title, img, price, stock }) => {
+const ProductCard: React.FC<ProductProps> = ({ title, img, price, oldPrice, stock }) => {
   const whatsAppMessage = encodeURIComponent(`Estoy interesado en ${title}`);
 
   const dialogRef: RefObject<HTMLDialogElement> = createRef();
@@ -69,7 +70,7 @@ const ProductCard: React.FC<ProductProps> = ({ title, img, price, stock }) => {
       </div>
       <div className={styles.priceContainer}>
         <div className={styles.oldPriceContainer}>
-          <h4 className={styles.oldPrice}>$400</h4>
+          <h4 className={styles.oldPrice}>{oldPrice}</h4>
           {price && <h3>{price}</h3>}
         </div>
       </div>

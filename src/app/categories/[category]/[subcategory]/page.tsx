@@ -31,6 +31,7 @@ export default async function Subcategory({
           title={product[index.TITLE]}
           img={product[index.IMG]}
           price={product[index.PRICE]}
+          oldPrice={product[index.OLD_PRICE]}
           stock={product[index.STOCK]}
           />
         ))}

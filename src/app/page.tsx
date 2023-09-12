@@ -20,6 +20,7 @@ export default async function Home() {
                 title={product[index.TITLE]}
                 img={product[index.IMG]}
                 price={product[index.PRICE]}
+                oldPrice={product[index.OLD_PRICE]}
                 stock={product[index.STOCK]}
               />
             ))}
@@ -35,6 +36,7 @@ export default async function Home() {
                 title={product[index.TITLE]}
                 img={product[index.IMG]}
                 price={product[index.PRICE]}
+                oldPrice={product[index.OLD_PRICE]}
                 stock={product[index.STOCK]}
               />
             ))}
