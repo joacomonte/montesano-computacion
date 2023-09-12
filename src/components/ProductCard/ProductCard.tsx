@@ -85,7 +85,7 @@ const ProductCard: React.FC<ProductProps> = ({ title, img, price, stock }) => {
           Mas info
         </button>
         <Link
-          href={`https://api.whatsapp.com/send?phone=5491136620845&text=${whatsAppMessage}`}
+          href={`https://api.whatsapp.com/send?phone=5491160081811&text=${whatsAppMessage}`}
         >
           <button className={styles.primaryButton}>WhatsApp</button>
         </Link>
