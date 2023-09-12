@@ -1,5 +1,6 @@
 
 .componentContainer{
+  position: relative;
   width: 60%;
   font-size: medium;
 }
@@ -15,18 +16,22 @@
   font-size: inherit;
   width: 100%;
   height: 45px;
-  padding: 15px;
+  padding: 1.5em 1em;
   border: none;
   border-radius: 10px;
-  margin-left: 15px;
   position:relative;
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(244, 244, 244);
   z-index: 5;
-  outline: none; /* Remove default focus outline */
+  box-shadow: inset 0 0 6px #dddddd;
 }
 .searchInput:focus {
-  outline: 2px solid #e3e3e3;; /* Change this to your desired focus border color */
   touch-action: manipulation;
+}
+
+@media (max-width: 768px) {
+  .searchInput {
+    font-size: 12px;
+  }
 }
 
 .cardList {
@@ -47,7 +52,7 @@
 
 @media (max-width: 768px) {
   .cardList {
-    width: 300px;
+    width: 83vw;
     font-size: small;
   }
 }
@@ -70,4 +75,17 @@
   border-radius: 4px;
 
   transform: scale(1.03); /* Scale down to 95% on hover */
+}
+
+
+.searchIcon {
+  all: unset;
+  cursor: pointer;
+
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Adjust this based on your preference */
+  transform: translateY(-50%);
+  z-index: 10;
+  /* Add other styles to represent your icon, e.g. using a background-image or font-awesome class */
 }
