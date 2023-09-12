@@ -3,6 +3,7 @@
 import styles from "./page.module.css";
 import ProductCard from "@/components/ProductCard/ProductCard";
 import { getData } from "@/lib/getAllData";
+import index from "@/globals";
 
 export default async function Home() {
   let data = await getData();
@@ -11,30 +12,30 @@ export default async function Home() {
     <div className={styles.pageContainer}>
       <main className={styles.main}>
         <div className={styles.carrouesellContainer}>
-          <h1 style={{marginLeft:'10px'}}>Destacados</h1>
+          <h1 style={{ marginLeft: "10px" }}>Destacados</h1>
           <div className={styles.carrousell}>
-            {data.map((product, index) => (
+            {data.map((product) => (
               <ProductCard
-                key={product[0]}
-                title={product[1]}
-                img={product[4]}
-                price={product[2] }
-                stock={product[3]}
+                key={product[index.ID]}
+                title={product[index.TITLE]}
+                img={product[index.IMG]}
+                price={product[index.PRICE]}
+                stock={product[index.STOCK]}
               />
             ))}
           </div>
         </div>
 
         <div className={styles.carrouesellContainer}>
-          <h1 style={{marginLeft:'10px'}}>En oferta!</h1>
+          <h1 style={{ marginLeft: "10px" }}>En oferta!</h1>
           <div className={styles.carrousell}>
             {data.map((product) => (
               <ProductCard
-                key={product[0]}
-                title={product[1]}
-                img={product[4]}
-                price={product[2]}
-                stock={product[3]}
+                key={product[index.ID]}
+                title={product[index.TITLE]}
+                img={product[index.IMG]}
+                price={product[index.PRICE]}
+                stock={product[index.STOCK]}
               />
             ))}
           </div>

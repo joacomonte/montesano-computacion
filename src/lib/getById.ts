@@ -1,5 +1,6 @@
 "use server";
 
+import index from "@/globals";
 import { Product, ProductsList } from "@/types/products";
 
 export async function getById(id: string): Promise<ProductsList> {
@@ -23,5 +24,5 @@ export async function getById(id: string): Promise<ProductsList> {
 }
 
 function isMatchingId(product: Product, id: string): boolean {
-  return product[0] === id;
+  return product[index.ID] === id;
 }

@@ -1,5 +1,6 @@
 "use server";
 
+import index from "@/globals";
 import { Product, ProductsList } from "@/types/products";
 
 export async function getByCategory(category: string, subcategory: string): Promise<ProductsList> {
@@ -33,10 +34,10 @@ function isMatchingCategory(
   const normalizedSubCategory = subcategory.toLowerCase();
 
   if (normalizedSubCategory === "todos") {
-    return product[5]?.toLowerCase() === normalizedCategory;
+    return product[index.CATEGORY]?.toLowerCase() === normalizedCategory;
   }
   return (
-    product[5]?.toLowerCase() === normalizedCategory &&
-    product[6]?.toLowerCase() === normalizedSubCategory
+    product[index.CATEGORY]?.toLowerCase() === normalizedCategory &&
+    product[index.SUBCATEGORY]?.toLowerCase() === normalizedSubCategory
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import index from "@/globals";
 import useFilterData from "@/hooks/useFilterData";
 import { getData } from "@/lib/getAllData";
 import { ProductsList } from "@/types/products";
@@ -59,7 +60,7 @@ export default function SearchPage() {
         {data ? (
           filteredData
             .slice(0, 15)
-            .map((product) => <span key={product[0]}> {product[1]} </span>)
+            .map((product) => <span key={product[index.ID]}> {product[index.TITLE]} </span>)
         ) : (
           <span>Sin resultados</span>
         )}

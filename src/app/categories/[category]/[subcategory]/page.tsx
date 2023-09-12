@@ -2,6 +2,7 @@
 import ProductCard from "@/components/ProductCard/ProductCard";
 import styles from "@/app/page.module.css"
 import { getByCategory } from "@/lib/getByCategory";
+import index from "@/globals";
 
 
 
@@ -24,13 +25,13 @@ export default async function Subcategory({
         categoria {category} y subcategoria {subcategory}
       </h1>
       <div className="productsContainer">
-        {data.map(([id, productName, productPrice, stock, img]) => (
+        {data.map((product) => (
           <ProductCard
-            key={id}
-            title={productName}
-            img={img}
-            price={productPrice }
-            stock={stock}
+          key={product[index.ID]}
+          title={product[index.TITLE]}
+          img={product[index.IMG]}
+          price={product[index.PRICE]}
+          stock={product[index.STOCK]}
           />
         ))}
       </div>

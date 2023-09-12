@@ -1,5 +1,6 @@
 // hooks/useFilterData.ts
 
+import index from "@/globals";
 import { Product, ProductsList } from "../types/products";
 
 export default function useFilterData(data: ProductsList, searchTerm: string) {
@@ -13,7 +14,7 @@ export default function useFilterData(data: ProductsList, searchTerm: string) {
 }
 
 function doesRowMatchSearchTerms(product: Product, searchTerms: string[]): boolean {
-  return searchTerms.every(term => product[1]?.toLowerCase().includes(term));
+  return searchTerms.every(term => product[index.TITLE]?.toLowerCase().includes(term));
 }
 
 function compareRowSearchTermPosition(searchTerm: string) {
@@ -26,22 +27,6 @@ function compareRowSearchTermPosition(searchTerm: string) {
 }
 
 function getTermIndexInRow(row: Product, searchTerm: string): number {
-  return row[1]?.toLowerCase().indexOf(searchTerm) ?? Infinity;
+  return row[index.TITLE]?.toLowerCase().indexOf(searchTerm) ?? Infinity;
 }
-
-
-
-
-
-// export default function useFilterData(data: RowData[], searchTerm: string) {
-
-//   // Split the searchTerm by space
-//   const searchTerms = searchTerm.toLowerCase().split(' ');
-
-//   const filteredData = data.filter(row => 
-//     searchTerms.every(term => row[0]?.toLowerCase().includes(term))
-//   );
-
-//   return { filteredData };
-// }
 

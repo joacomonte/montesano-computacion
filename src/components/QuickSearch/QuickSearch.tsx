@@ -7,6 +7,7 @@ import useClickOutside from "@/hooks/useOutsideClick";
 import { getData } from "@/lib/getAllData";
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
+import index from "@/globals";
 
 interface QuickSearchProps {
   data?: ProductsList;
@@ -71,9 +72,9 @@ const QuickSearch: FC<QuickSearchProps> = () => {
         filteredData.length > 0 ? (
           <ul className={styles.cardList}>
             {filteredData.slice(0, 6).map((product) => (
-              <li key={product[0]} className={styles.card}>
-                <Link href={`/product/${product[0]}`}>
-                  {product[1]} <b>{product[2]}</b>
+              <li key={product[index.ID]} className={styles.card}>
+                <Link href={`/product/${product[index.ID]}`}>
+                  {product[index.TITLE]} <b>{product[index.PRICE]}</b>
                 </Link>
               </li>
             ))}

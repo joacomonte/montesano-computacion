@@ -1,3 +1,4 @@
+import index from "@/globals";
 import { getById } from "@/lib/getById";
 
 type Params = {
@@ -21,7 +22,7 @@ export default async function Subcategory({ params: { id } }: Params) {
     >
       <h1 style={{ textAlign: "center", margin: "50px" }}>
         {data &&
-          data.map((product) => <span key={product[0]}> {product[1]} </span>)}
+          data.map((product) => <span key={product[index.ID]}> {product[index.TITLE]} </span>)}
       </h1>
     </div>
   );
