@@ -92,3 +92,20 @@ a {
     width: 50px;
   }
 }
+
+
+.productsContainer{
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+  .productsContainer {
+    width: 100%;
+    gap: 10px;
+    font-size: small;
+  }
+}

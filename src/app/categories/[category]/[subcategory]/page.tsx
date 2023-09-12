@@ -1,9 +1,5 @@
 
 import ProductCard from "@/components/ProductCard/ProductCard";
-import useFilterByCategory from "@/hooks/useFilterByCategory";
-import { getData } from "@/lib/getAllData";
-import { ProductsList } from "@/types/products";
-import { useEffect, useState } from "react";
 import styles from "@/app/page.module.css"
 import { getByCategory } from "@/lib/getByCategory";
 
@@ -27,12 +23,12 @@ export default async function Subcategory({
       <h1 style={{textAlign: 'center', margin: '50px'}}>
         categoria {category} y subcategoria {subcategory}
       </h1>
-      <div className={styles.productsContainer}>
+      <div className="productsContainer">
         {data.map(([id, productName, productPrice, stock, img]) => (
           <ProductCard
             key={id}
             title={productName}
-            img={img || ""}
+            img={img}
             price={productPrice }
             stock={stock}
           />

@@ -3,76 +3,31 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 10px;
+  padding-top: 150px;
   min-height: 100vh;
-  margin-top: 80px;
-}
-
-.productsContainer{
-  width: 90vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 50px;
-}
-
-@media (max-width: 768px) {
-  .productsContainer {
-    width: 100%;
-    gap: 10px;
-    font-size: small;
-  }
-}
-
-
-.sideButton {
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  margin: 10px;
-  padding: 20px;
-  transition: border 0.3s ease, border-radius 0.3s ease; /* Adding transitions for smooth animations */
-  border: 1px solid transparent; /* Adding initial border style */
-  border-radius: 0; /* Adding initial border radius */
-  background-color: black;
 }
 
 .carrouesellContainer{
-  width: 90vw;
-  margin: 50px 0;
-
+  width: 100vw;
+  padding-bottom: 50px;
+  padding-left: 5vw;
 }
 
 .carrousell{
   width: 100%;
-  height: auto;
-
-  width: 100%;
-  text-align: center;
   overflow: hidden;
-
-  /* background-color: rgb(225, 225, 225); */
   display: flex;
-  
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-
-
   border-radius: 10px;
-  
   gap: 20px;
-  
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  
 }
-
 .carrousell::-webkit-scrollbar {
   width: 5px;
   height: 5px;
 }
-
 .carrousell::-webkit-scrollbar-thumb {
   background: rgb(201, 201, 201);
   border-radius: 5px;
