@@ -53,7 +53,7 @@ export default function SearchPage() {
       </h1>
       <h3 style={{flex: 1, display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", textAlign: "center", margin: "50px" }}>
         {data &&
-          filteredData.map((product) => (
+            filteredData.slice(0, 15).map((product) => (
             <span key={product[0]}> {product[1]} </span>
           ))}
       </h3>
