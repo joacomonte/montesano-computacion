@@ -67,7 +67,7 @@
   padding: 10px;
   border-radius: 4px;
   background-color: rgb(255, 255, 255);
-  transition: transform 0.3s; /* Add a transition for smooth scaling */
+  transition: transform 0.3s;
 }
 
 .card:hover {
@@ -75,7 +75,7 @@
   padding: 10px;
   border-radius: 4px;
 
-  transform: scale(1.03); /* Scale down to 95% on hover */
+  transform: scale(1.03); 
 }
 
 
@@ -85,8 +85,8 @@
 
   position: absolute;
   top: 50%;
-  right: 10px; /* Adjust this based on your preference */
+  right: 1em; 
   transform: translateY(-50%);
   z-index: 10;
-  /* Add other styles to represent your icon, e.g. using a background-image or font-awesome class */
+
 }
