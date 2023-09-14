@@ -1,17 +1,19 @@
 .card {
   position: relative;
   background-color: var(--background-product-card);
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: space-between;
 
-  height: 500px;
+  height: auto;
+  max-height: 490px;
+  
   min-width: 300px;
   width: 300px;
   max-width: 300px;
+
 
   font-size: 16px;
 
@@ -19,11 +21,11 @@
 }
 @media (max-width: 768px) {
   .card {
-    min-width: 300px;
+    min-width: 250px;
     width: 250px;
-    height: 450px;
+    max-width: 250px;
     font-size: 14px;
-    padding: 15px
+    padding: 20px
   }
 }
 
@@ -32,7 +34,6 @@
   align-self: center;
   position: relative;
   width: 100%;
-  position: relative;
 }
 .imgContainer::before {
   content: "";
@@ -46,7 +47,7 @@
 .title {
   font-size: 1.2em;
   font-weight: 600;
-  padding: 5px 0;
+  padding: 2px 0;
 }
 
 .stock {
@@ -118,12 +119,12 @@
   font-size: 1em;
   background: transparent;
   color: grey;
-  padding-top: 5px;
+  padding: 5px 0;
 }
 
 @media (max-width: 768px) {
   .infoButton {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
 }
 
@@ -141,6 +142,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  padding-top: 40px;
 }
 
 .oldPriceContainer {
@@ -185,8 +187,10 @@
   position: relative;
   justify-self: center;
   align-self: center;
-
   padding-right: 3.5em;
   width: 30px;
   height: 30px;
+
+  /* sightly up */
+  top: -2px; 
 }
