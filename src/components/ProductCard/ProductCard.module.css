@@ -9,11 +9,10 @@
 
   height: auto;
   max-height: 490px;
-  
+
   min-width: 300px;
   width: 300px;
   max-width: 300px;
-
 
   font-size: 16px;
 
@@ -21,11 +20,10 @@
 }
 @media (max-width: 768px) {
   .card {
-    min-width: 250px;
-    width: 250px;
-    max-width: 250px;
+    min-width: 150px;
+    width: 45vw;
     font-size: 14px;
-    padding: 20px
+    padding: 10px;
   }
 }
 
@@ -49,6 +47,13 @@
   font-weight: 600;
   padding: 2px 0;
 }
+@media (max-width: 768px) {
+  .title {
+    font-size: 1em;
+    font-weight: 600;
+    padding: 2px 0;
+  }
+}
 
 .stock {
   font-size: 0.8em;
@@ -56,12 +61,17 @@
   padding: 2px 0;
   color: #8f8f8f;
   font-weight: 400;
-
   width: 100%;
 }
-.card h3 {
-  font-size: 20px;
-  font-weight: 700;
+@media (max-width: 768px) {
+  .stock {
+    font-size: 0.7em;
+    margin: 0;
+    padding: 2px 0;
+    color: #8f8f8f;
+    font-weight: 400;
+    width: 100%;
+  }
 }
 
 .primaryButton {
@@ -136,13 +146,22 @@
   align-items: center;
 }
 
-
-
 .bottomContainer {
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding-top: 40px;
+}
+
+.price {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .price {
+    font-size: 1em;
+    font-weight: 600;
+  }
 }
 
 .oldPriceContainer {
@@ -153,11 +172,21 @@
   position: absolute;
   width: 100%;
   color: gray;
-  font-size: 14px;
+  font-size: 0.8em;
   font-weight: 400;
-
   bottom: 100%;
   text-decoration: line-through;
+}
+@media (max-width: 768px) {
+  .oldPrice {
+    position: absolute;
+    width: 100%;
+    color: gray;
+    font-size: 0.7em;
+    font-weight: 400;
+    bottom: 100%;
+    text-decoration: line-through;
+  }
 }
 
 .centerContent {
@@ -183,7 +212,7 @@
   }
 }
 
-.waContainer{
+.waContainer {
   position: relative;
   justify-self: center;
   align-self: center;
@@ -192,5 +221,5 @@
   height: 30px;
 
   /* sightly up */
-  top: -2px; 
+  top: -2px;
 }

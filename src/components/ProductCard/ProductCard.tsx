@@ -75,13 +75,12 @@ const ProductCard: React.FC<ProductProps> = ({
         <button className={styles.infoButton} onClick={openDialog}>
           Mas info...
         </button>
-
       </div>
       <div className={styles.bottomContainer}>
         <div className={styles.oldPriceContainer}>
           {oldPrice && <h5 className={styles.oldPrice}>{oldPrice}</h5>}
-         {price && <h3>{price}</h3>}
-         {stock && <h4 className={styles.stock}>{stock}</h4>}
+          {price && <data className={styles.price}>{price}</data>}
+          {stock && <h6 className={styles.stock}>{stock}</h6>}
         </div>
         <Link
           className={styles.waContainer}
@@ -99,8 +98,11 @@ const ProductCard: React.FC<ProductProps> = ({
         </Link>
       </div>
 
-      <CustomDialog onClose={closeDialog} content={dialogContent} dialogRef={dialogRef}/>
-
+      <CustomDialog
+        onClose={closeDialog}
+        content={dialogContent}
+        dialogRef={dialogRef}
+      />
     </div>
   );
 };
