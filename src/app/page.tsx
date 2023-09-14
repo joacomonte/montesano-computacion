@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import styles from "./page.module.css";
-import ProductCard from "@/components/ProductCard/ProductCard";
+import ProductCard from "@/components/ProductCard/page";
 import { getData } from "@/lib/getAllData";
 import index from "@/globals";
 

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import styles from "./ProductCard.module.css";
+import styles from "./page.module.css";
 import { RefObject, createRef } from "react";
 import Link from "next/link";
 import CustomDialog from "../CustomDialog/CustomDialog";
