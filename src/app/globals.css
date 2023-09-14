@@ -105,7 +105,7 @@ a {
 @media (max-width: 768px) {
   .productsContainer {
     width: 100%;
-    gap: 10px;
+    gap: 30px;
     font-size: small;
   }
 }

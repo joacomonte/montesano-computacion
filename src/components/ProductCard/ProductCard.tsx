@@ -24,7 +24,13 @@ interface ProductProps {
   stock?: string | null;
 }
 
-const ProductCard: React.FC<ProductProps> = ({ title, img, price, oldPrice, stock }) => {
+const ProductCard: React.FC<ProductProps> = ({
+  title,
+  img,
+  price,
+  oldPrice,
+  stock,
+}) => {
   const whatsAppMessage = encodeURIComponent(`Estoy interesado en ${title}`);
 
   const dialogRef: RefObject<HTMLDialogElement> = createRef();
@@ -41,7 +47,7 @@ const ProductCard: React.FC<ProductProps> = ({ title, img, price, oldPrice, stoc
 
   return (
     <div className={styles.card}>
-      <div className={styles.cardImg}>
+      <div className={styles.imgContainer}>
         {img ? (
           <Image
             src={img}
@@ -65,32 +71,36 @@ const ProductCard: React.FC<ProductProps> = ({ title, img, price, oldPrice, stoc
         )}
       </div>
       <div>
-        {title && <h2>{title}</h2>}
-        {stock && <h4 className={styles.stock}>{stock}</h4>}
-      </div>
-      <div className={styles.priceContainer}>
-        <div className={styles.oldPriceContainer}>
-          <h4 className={styles.oldPrice}>{oldPrice}</h4>
-          {price && <h3>{price}</h3>}
-        </div>
-      </div>
-
-      <CustomDialog
-        onClose={closeDialog}
-        content={dialogContent}
-        dialogRef={dialogRef}
-      />
-
-      <div className={styles.centerContent}>
-        <button className={styles.secondaryButton} onClick={openDialog}>
-          Mas info
+        {title && <div className={styles.title}>{title}</div>}
+        <button className={styles.infoButton} onClick={openDialog}>
+          Mas info...
         </button>
+
+      </div>
+      <div className={styles.bottomContainer}>
+        <div className={styles.oldPriceContainer}>
+          {oldPrice && <h5 className={styles.oldPrice}>{oldPrice}</h5>}
+         {price && <h3>{price}</h3>}
+         {stock && <h4 className={styles.stock}>{stock}</h4>}
+        </div>
         <Link
+          className={styles.waContainer}
           href={`https://api.whatsapp.com/send?phone=5491160081811&text=${whatsAppMessage}`}
         >
-          <button className={styles.primaryButton}>WhatsApp</button>
+          <Image
+            src="/WA.svg"
+            alt="Placeholder"
+            sizes="15px"
+            fill
+            style={{
+              objectFit: "contain",
+            }}
+          ></Image>
         </Link>
       </div>
+
+      <CustomDialog onClose={closeDialog} content={dialogContent} dialogRef={dialogRef}/>
+
     </div>
   );
 };

@@ -1,48 +1,61 @@
 .card {
   position: relative;
   background-color: var(--background-product-card);
-  padding: 20px 30px;
-  margin: 16px 0;
+  padding: 20px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  justify-content: space-between;
 
-  height: 400px;
-
+  height: 500px;
   min-width: 300px;
-  width: 90vw;
-  max-width: 330px;
+  width: 300px;
+  max-width: 300px;
+
+  font-size: 16px;
+
   transition: transform 0.3s ease;
 }
-
 @media (max-width: 768px) {
   .card {
-    min-width: 250px;
-    height: 350px;
-    font-size: 12px;
-    padding: 15px 15px;
+    min-width: 300px;
+    width: 250px;
+    height: 450px;
+    font-size: 14px;
+    padding: 15px
   }
 }
 
+.imgContainer {
+  justify-self: center;
+  align-self: center;
+  position: relative;
+  width: 100%;
+  position: relative;
+}
+.imgContainer::before {
+  content: "";
+  display: block;
+  padding-top: 100%; /* This forces the height to match the width */
+}
 .card:hover {
   transform: scale(1.01);
 }
 
-.card h2 {
-  font-size: 20px;
-  width: 100%;
-  text-align: center;
-  padding-bottom: 5px;
+.title {
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: 5px 0;
 }
+
 .stock {
-  font-size: 14px;
+  font-size: 0.8em;
   margin: 0;
-  padding: 0;
-  color: #757575;
+  padding: 2px 0;
+  color: #8f8f8f;
   font-weight: 400;
-  text-align: center;
+
   width: 100%;
 }
 .card h3 {
@@ -97,46 +110,20 @@
   }
 }
 
-.secondaryButton {
-  margin-left: -8px;
-  display: inline-block;
+.infoButton {
   outline: 0;
   cursor: pointer;
   border: none;
-  padding: 0 1rem;
-  height: 2.5em;
-  line-height: 2.3em;
-  border-radius: 7px;
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: 1em;
   background: transparent;
   color: grey;
-  border: 1px solid transparent;
-  transition: border 0.3s ease;
-}
-.secondaryButton:hover {
-  border: 1px solid grey;
+  padding-top: 5px;
 }
 
 @media (max-width: 768px) {
-  .secondaryButton {
-    display: inline-block;
-    outline: 0;
-    cursor: pointer;
-    border: none;
-    padding: 0.5em;
-    height: 2.5rem;
-    line-height: 0.5rem;
-    border-radius: 7px;
-    font-weight: 400;
-    font-size: 14px;
-    background: transparent;
-    color: grey;
-    border: 1px solid transparent;
-    transition: border 0.3s ease;
-  }
-  .secondaryButton:hover {
-    border: 1px solid grey;
+  .infoButton {
+    font-size: 0.8em;
   }
 }
 
@@ -148,20 +135,12 @@
   align-items: center;
 }
 
-.cardImg {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
 
-.priceContainer {
+
+.bottomContainer {
   width: 100%;
-  margin-top: 25px;
-  padding-left: 8px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  position: relative;
 }
 
 .oldPriceContainer {
@@ -178,9 +157,12 @@
   bottom: 100%;
   text-decoration: line-through;
 }
+
 .centerContent {
-  width: 100%;
+  width: 95%;
   display: flex;
+  justify-self: center;
+  align-self: center;
   justify-content: space-between;
   align-content: center;
   text-align: center;
@@ -199,3 +181,12 @@
   }
 }
 
+.waContainer{
+  position: relative;
+  justify-self: center;
+  align-self: center;
+
+  padding-right: 3.5em;
+  width: 30px;
+  height: 30px;
+}

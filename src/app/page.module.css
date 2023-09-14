@@ -14,6 +14,7 @@
 }
 
 .carrousell{
+  padding: 20px 0;
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -26,7 +27,7 @@
 }
 .carrousell::-webkit-scrollbar {
   width: 5px;
-  height: 5px;
+  height: 8px;
 }
 .carrousell::-webkit-scrollbar-thumb {
   background: rgb(201, 201, 201);
