@@ -1,6 +1,5 @@
 
-import ProductCard from "@/components/ProductCard/page";
-import styles from "@/app/page.module.css"
+import ProductCard from "@/components/ProductCard/ProductCard";
 import { getByCategory } from "@/lib/getByCategory";
 import index from "@/globals";
 

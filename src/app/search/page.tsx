@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
-import ProductCard from "@/components/ProductCard/page";
+import ProductCard from "@/components/ProductCard/ProductCard";
 import index from "@/globals";
 import useFilterData from "@/hooks/useFilterData";
 import { getData } from "@/lib/getAllData";
@@ -9,14 +10,12 @@ import { useSearchParams } from "next/navigation";
 import {useEffect, useState } from "react";
 
 import styles from "./page.module.css";
-import BurgerIcon from "@/components/burgerIcon/BurgerIcon";
 
 
 export default function SearchPage() {
   const [data, setData] = useState<ProductsList>();
   const [searchTerm, setSearchTerm] = useState("");
   const [cardsAreLoading, setCardsAreLoading] = useState(true);
-
 
   const queryTerm = useSearchParams().get("query") || "";
 
@@ -27,10 +26,9 @@ export default function SearchPage() {
       setData(result);
       setCardsAreLoading(false);
     };
-    // await new Promise((resolve) => setTimeout(resolve, 1000));
+ 
     fetchData();
     setSearchTerm(queryTerm);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const filteredData = useFilterData(data || [], searchTerm);

@@ -1,18 +1,13 @@
 "use client";
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "./ProductCard.module.css";
 import { RefObject, createRef } from "react";
 import Link from "next/link";
 import CustomDialog from "../CustomDialog/CustomDialog";
 
 const dialogContent = (
   <>
-    <h1>Titulo</h1>
-    <h3>Subtitulo</h3>
-    <p>Descripcion larga y aburrida</p>
-    <br />
-    <p>Mas descripcion larga y aburrida</p>
-    <br />
+    <h1>Proximamente</h1>
   </>
 );
 
