@@ -60,7 +60,12 @@ a {
   justify-self: center;
   align-items: center;
   overflow: visible;
+}
 
+@media (max-width: 768px) {
+  .layoutContainer {
+    width: 90vw;
+  }
 }
 
 .layoutContainer > :first-child {
