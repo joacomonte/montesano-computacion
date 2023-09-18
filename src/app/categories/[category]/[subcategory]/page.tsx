@@ -1,9 +1,5 @@
-
-import ProductCard from "@/components/ProductCard/ProductCard";
+import ProductsList from "@/components/ProductsList/ProductsList";
 import { getByCategory } from "@/lib/getByCategory";
-import index from "@/globals";
-
-
 
 type Params = {
   params: {
@@ -15,25 +11,16 @@ type Params = {
 export default async function Subcategory({
   params: { category, subcategory },
 }: Params) {
-
   let data = await getByCategory(category, subcategory);
 
   return (
-    <div style={{ marginTop: "150px", display:'flex', flexDirection:'column', alignItems:'center', width: '100%' }}>
-      <h1 style={{textAlign: 'center', margin: '50px'}}>
-        categoria {category} y subcategoria {subcategory}
-      </h1>
-      <div className="productsContainer">
-        {data.map((product) => (
-          <ProductCard
-          key={product[index.ID]}
-          title={product[index.TITLE]}
-          img={product[index.IMG]}
-          price={product[index.PRICE]}
-          oldPrice={product[index.OLD_PRICE]}
-          stock={product[index.STOCK]}
-          />
-        ))}
+    <div className="flex flex-col items-center w-full mt-40">
+      <div className="w-9/10 flex justify-center items-center flex-wrap gap-10 md:gap-4 md:w-full md:text-sm">
+        {data && data.length > 0 ? (
+          <ProductsList data={data} />
+        ) : (
+          <h3 className="text-2xl font-bold"> No se encontraron productos en esta categoria :(</h3>
+        )}
       </div>
     </div>
   );

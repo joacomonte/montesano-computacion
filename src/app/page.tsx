@@ -13,14 +13,14 @@ export default async function Home() {
         <div className={styles.carrouesellContainer}>
           <h1 style={{ marginLeft: "10px" }}>Destacados</h1>
           <div className={styles.carrousell}>
-            <ProductsList data={data} />
+            <ProductsList data={data} limit={10} />
           </div>
         </div>
 
         <div className={styles.carrouesellContainer}>
           <h1 style={{ marginLeft: "10px" }}>En oferta!</h1>
           <div className={styles.carrousell}>
-          <ProductsList data={data} />
+          <ProductsList data={data} limit={10} />
           </div>
         </div>
       </main>

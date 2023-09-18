@@ -1,3 +1,4 @@
+import ProductCard from "@/components/ProductCard/ProductCard";
 import index from "@/globals";
 import { getById } from "@/lib/getById";
 
@@ -8,22 +9,22 @@ type Params = {
 };
 
 export default async function Subcategory({ params: { id } }: Params) {
-  let data = await getById(id);
+  let product = await getById(id);
 
   return (
-    <div
-      style={{
-        marginTop: "150px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        width: "100%",
-      }}
-    >
-      <h1 style={{ textAlign: "center", margin: "50px" }}>
-        {data &&
-          data.map((product) => <span key={product[index.ID]}> {product[index.TITLE]} </span>)}
-      </h1>
+    <div className="flex flex-col items-center w-full mt-40">
+      {product ?
+      <ProductCard
+        key={product[index.ID]}
+        title={product[index.TITLE]}
+        img={product[index.IMG]}
+        price={product[index.PRICE]}
+        oldPrice={product[index.OLD_PRICE]}
+        stock={product[index.STOCK]}
+      />
+      :
+      null
+      }
     </div>
   );
 }

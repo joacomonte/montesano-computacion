@@ -45,6 +45,8 @@ const QuickSearch: FC<QuickSearchProps> = () => {
     clearData();
   };
 
+
+
   return (
     <div className={styles.componentContainer} ref={divRef}>
       <form onSubmit={handleSearch}>
@@ -72,7 +74,7 @@ const QuickSearch: FC<QuickSearchProps> = () => {
           <ul className={styles.cardList}>
             {filteredData.slice(0, 6).map((product) => (
               <li key={product[index.ID]} className={styles.card}>
-                <Link href={`/product/${product[index.ID]}`}>
+                <Link href={`/product/${product[index.ID]}`} onClick={clearData}>
                   {product[index.TITLE]} <b>{product[index.PRICE]}</b>
                 </Link>
               </li>

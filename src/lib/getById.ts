@@ -1,26 +1,17 @@
-"use server";
 
 import index from "@/globals";
 import { Product, ProductsList } from "@/types/products";
+import { getData } from "./getAllData";
 
-export async function getById(id: string): Promise<ProductsList> {
+export async function getById(id: string): Promise<Product | undefined> {
 
-  const SHEET_ID = process.env.SHEET_ID;
-  const API_KEY = process.env.API_KEY;
-
-  const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/productList?key=${API_KEY}`;
-  const res = await fetch(url);
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  const result = await res.json();
-  const filteredData = result.values.filter((product: any) => 
+  const allProducts: ProductsList = await getData();
+  
+  const product = allProducts.find((product: Product) => 
     isMatchingId(product, id)
   );
 
-  return filteredData;
+  return product;
 }
 
 function isMatchingId(product: Product, id: string): boolean {

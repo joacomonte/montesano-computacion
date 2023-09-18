@@ -1,17 +1,24 @@
 import React from 'react';
 import ProductCard from '@/components/ProductCard/ProductCard'
 import index from '@/globals';
-import { ProductsList } from '@/types/products'
-
+import { Product, ProductsList } from '@/types/products'
 
 interface ProductsListComponentProps {
     data: ProductsList;
+    limit?: number;
 }
 
-const ProductsList: React.FC<ProductsListComponentProps> = ({ data }) => {
+/**
+ * @param {number} limit - The maximum number of items that will be displayed.
+ * ```tsx
+ * <ProductsList data={productsData} limit={5} />
+ * ```
+ */
+const ProductsList: React.FC<ProductsListComponentProps> = ({ data, limit }) => {
+    const productsToRender = limit ? data.slice(0, limit) : data;
     return (
         <>
-            {data.slice(0, 8).map((product) => (
+            {productsToRender.map((product: Product) => (
                 <ProductCard
                     key={product[index.ID]}
                     title={product[index.TITLE]}
