@@ -15,7 +15,7 @@ export default async function Subcategory({
 
   return (
     <div className="flex flex-col items-center w-full mt-40">
-      <div className="w-9/10 flex justify-center items-center flex-wrap gap-10 md:gap-4 md:w-full md:text-sm">
+      <div className="w-9/10 flex justify-center items-center flex-wrap gap-5 md:gap-4 md:w-full md:text-sm">
         {data && data.length > 0 ? (
           <ProductsList data={data} />
         ) : (
