@@ -1,4 +1,4 @@
-# Montesano Computacion Catalog/ECommerce
+# Montesano Computacion Catalog/eCommerce
 
 ## Emphasis Areas
 - Google API Cloud Spreadsheet synced
