@@ -36,7 +36,7 @@ export default function SearchPage() {
   return (
     <div className={styles.pageContent}>
       <div className={styles.searchContainer}>
-        <label className={styles.searchLabel}>Filtrar</label>
+        <label className={styles.searchLabel}>Buscar en todos los productos</label>
         <input
           className={styles.searchInput}
           id="searchInput"
