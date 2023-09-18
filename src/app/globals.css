@@ -77,8 +77,8 @@ a {
 
 }
 .layoutContainer > :nth-child(3) {
-  justify-self: end;
-  align-items: center;
+  justify-self: flex-end;
+  justify-content: flex-end;
   grid-column: 3;
 
 }

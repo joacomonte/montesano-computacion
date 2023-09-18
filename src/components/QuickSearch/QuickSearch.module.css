@@ -1,38 +1,51 @@
-
-.componentContainer{
+.componentContainer {
   position: relative;
-  width: 60%;
+  width: 100%;
   font-size: medium;
+  display: flex;
 }
 
-@media (max-width: 768px) {
-  .componentContainer {
-    width: 100px;
-    font-size: small;
-  }
+.formStyle {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 10px; /* Adjust based on your design */
+  transform: translateY(-50%);
+  cursor: none;
+  pointer-events: none !important;
+}
+.searchIcon path {
+  cursor: none;
+  fill: transparent;
+  pointer-events: none !important; 
 }
 
 .searchInput {
   font-size: inherit;
-  width: 100%;
+  width: 52px;
   height: 45px;
   padding: 1.5em 1em;
   border: none;
-  border-radius: 10px;
-  position:relative;
+  border-radius: 100px;
+  position: relative;
   background-color: rgb(244, 244, 244);
   z-index: 5;
   box-shadow: inset 0 0 6px #dddddd;
   outline: none;
+  transition: width 0.3s ease;
 }
 .searchInput:focus {
   touch-action: manipulation;
+  width: 100%;
 }
 
-@media (max-width: 768px) {
-  .searchInput {
-    font-size: 12px;
-  }
+.searchInput:focus + .searchIcon {
+  opacity: 0;
 }
 
 .cardList {
@@ -40,7 +53,8 @@
   flex-direction: column;
   gap: 10px;
   position: absolute;
-  right: 0;           /* Added this to ensure the expansion is to the left */
+  top: 60px;
+  right: 0; /* Added this to ensure the expansion is to the left */
   list-style: none;
   background-color: #d9d9d91c;
   backdrop-filter: blur(5px);
@@ -58,12 +72,15 @@
   }
 }
 
-
-
+.firstCard {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: rgb(228, 254, 240);
+  transition: transform 0.3s;
+}
 .card {
   cursor: pointer;
-
-
   padding: 10px;
   border-radius: 4px;
   background-color: rgb(255, 255, 255);
@@ -71,13 +88,10 @@
 }
 
 .card:hover {
-
   padding: 10px;
   border-radius: 4px;
-
-  transform: scale(1.03); 
+  transform: scale(1.03);
 }
-
 
 .searchIcon {
   all: unset;
@@ -85,8 +99,7 @@
 
   position: absolute;
   top: 50%;
-  right: 1em; 
+  right: 1em;
   transform: translateY(-50%);
   z-index: 10;
-
 }
