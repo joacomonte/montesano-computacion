@@ -79,7 +79,7 @@ const ProductCard: React.FC<ProductProps> = ({
         </div>
         <Link
           className={styles.waContainer}
-          href={`https://api.whatsapp.com/send?phone=5491160081811&text=${whatsAppMessage}`}
+          href={`https://api.whatsapp.com/send?phone=5491130347718&text=${whatsAppMessage}`}
         >
           <Image
             src="/WA.svg"
