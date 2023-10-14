@@ -6,9 +6,7 @@ export async function getData(): Promise<ProductsList> {
   const API_KEY = process.env.API_KEY;
   
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/productList?key=${API_KEY}`;
-  const res = await fetch(url, {
-    next: { revalidate: 30 },
-  });
+  const res = await fetch(url, { next: { revalidate: 30 } } as RequestInit) // RequestInit fix TS alert of next revalidate 30 seconds
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");

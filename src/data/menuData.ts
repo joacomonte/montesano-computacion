@@ -1,12 +1,17 @@
 export const menuData = [
     {
         id: "01",
-        label: "Equipos PC",
+        label: "Componentes",
         children: [
-            { id: "0101", label: "Todos", href: "/equipos-pc/todos" },
-            { id: "0102", label: "Oficina", href: "/equipos-pc/oficina" },
-            { id: "0103", label: "Gamer", href: "/equipos-pc/gamer" },
-            { id: "0104", label: "Extreme", href: "/equipos-pc/extreme" }
+            { id: "0101", label: "Todos", href: "/componentes/todos" },
+            { id: "0102", label: "Almacenamiento", href: "/componentes/almacenamiento" },
+            { id: "0103", label: "Coolers", href: "/componentes/cooler" },
+            { id: "0104", label: "Fuentes", href: "/componentes/fuentes" },
+            { id: "0105", label: "Gabinetes", href: "/componentes/gabinetes" },
+            { id: "0106", label: "Memorias", href: "/componentes/memorias" },
+            { id: "0107", label: "Procesadores", href: "/componentes/procesadores" },
+            { id: "0108", label: "Mothers", href: "/componentes/mothers" },
+            { id: "0109", label: "Placas de Video", href: "/componentes/placa video" }
         ]
     },
     {
