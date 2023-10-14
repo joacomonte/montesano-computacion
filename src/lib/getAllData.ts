@@ -1,4 +1,5 @@
 "use server";
+import index from "@/globals";
 import { ProductsList } from "../types/products";
 
 export async function getData(): Promise<ProductsList> {
@@ -13,6 +14,11 @@ export async function getData(): Promise<ProductsList> {
   }
 
   const result = await res.json();
+
   const values: ProductsList = result.values || [];
-  return values;
+
+  // filter all visible products 
+  const visibleProducts: ProductsList = values.filter(product => product[index.VISIBLE] !== 'oculto');
+
+  return visibleProducts;
 }

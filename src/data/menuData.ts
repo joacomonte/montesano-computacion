@@ -4,14 +4,14 @@ export const menuData = [
         label: "Componentes",
         children: [
             { id: "0101", label: "Todos", href: "/componentes/todos" },
+            { id: "0107", label: "Procesadores", href: "/componentes/procesadores" },
+            { id: "0106", label: "Memorias", href: "/componentes/memorias" },
+            { id: "0109", label: "Placas de Video", href: "/componentes/placa-video" },
             { id: "0102", label: "Almacenamiento", href: "/componentes/almacenamiento" },
-            { id: "0103", label: "Coolers", href: "/componentes/cooler" },
+            { id: "0108", label: "Mothers", href: "/componentes/mothers" },
             { id: "0104", label: "Fuentes", href: "/componentes/fuentes" },
             { id: "0105", label: "Gabinetes", href: "/componentes/gabinetes" },
-            { id: "0106", label: "Memorias", href: "/componentes/memorias" },
-            { id: "0107", label: "Procesadores", href: "/componentes/procesadores" },
-            { id: "0108", label: "Mothers", href: "/componentes/mothers" },
-            { id: "0109", label: "Placas de Video", href: "/componentes/placa-video" }
+            { id: "0103", label: "Coolers", href: "/componentes/cooler" },
         ]
     },
     {

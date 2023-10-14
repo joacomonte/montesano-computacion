@@ -9,6 +9,7 @@ const index = {
     DESCRIPTION: 6,
     CATEGORY: 7,
     SUBCATEGORY: 8,
+    VISIBLE: 9,
   };
   
   export default index;
