@@ -11,7 +11,7 @@ export const menuData = [
             { id: "0106", label: "Memorias", href: "/componentes/memorias" },
             { id: "0107", label: "Procesadores", href: "/componentes/procesadores" },
             { id: "0108", label: "Mothers", href: "/componentes/mothers" },
-            { id: "0109", label: "Placas de Video", href: "/componentes/placa video" }
+            { id: "0109", label: "Placas de Video", href: "/componentes/placa-video" }
         ]
     },
     {
