@@ -19,13 +19,7 @@ interface ProductProps {
   stock?: string | null;
 }
 
-const ProductCard: React.FC<ProductProps> = ({
-  title,
-  img,
-  price,
-  oldPrice,
-  stock,
-}) => {
+const ProductCard: React.FC<ProductProps> = ({ title, img, price, oldPrice, stock }) => {
   const whatsAppMessage = encodeURIComponent(`Estoy interesado en ${title}`);
 
   const dialogRef: RefObject<HTMLDialogElement> = createRef();
@@ -52,6 +46,7 @@ const ProductCard: React.FC<ProductProps> = ({
             style={{
               objectFit: "contain",
             }}
+            unoptimized
           ></Image>
         ) : (
           <Image
@@ -77,10 +72,7 @@ const ProductCard: React.FC<ProductProps> = ({
           {price && <data className={styles.price}>{price}</data>}
           {stock && <h6 className={styles.stock}>{stock}</h6>}
         </div>
-        <Link
-          className={styles.waContainer}
-          href={`https://api.whatsapp.com/send?phone=5491130347718&text=${whatsAppMessage}`}
-        >
+        <Link className={styles.waContainer} href={`https://api.whatsapp.com/send?phone=5491130347718&text=${whatsAppMessage}`}>
           <Image
             src="/WA.svg"
             alt="Placeholder"
@@ -93,11 +85,7 @@ const ProductCard: React.FC<ProductProps> = ({
         </Link>
       </div>
 
-      <CustomDialog
-        onClose={closeDialog}
-        content={dialogContent}
-        dialogRef={dialogRef}
-      />
+      <CustomDialog onClose={closeDialog} content={dialogContent} dialogRef={dialogRef} />
     </div>
   );
 };
