@@ -20,28 +20,26 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={inter.className}>
         <div className="menuBarContainer">
-
-        <div className="layoutContainer">
-        <SideMenu data={menuData} />
-          <Link href={'/'} className="logoContainer">
-          <Image src="/mcLogo.svg" alt="Logo"
-            sizes="500px"
-            fill
-            style={{
-              objectFit: "contain",
-            }} />
-          </Link>
-          <QuickSearch />
-        </div>
+          <div className="layoutContainer">
+            <SideMenu data={menuData} />
+            <Link href={"/"} className="logoContainer">
+              <Image
+                src="/mcLogo.svg"
+                alt="Logo"
+                sizes="500px"
+                fill
+                style={{
+                  objectFit: "contain",
+                }}
+              />
+            </Link>
+            <QuickSearch />
+          </div>
         </div>
 
         {children}

@@ -3,6 +3,7 @@
 import styles from "./page.module.css";
 import { getData } from "@/lib/getAllData";
 import ProductsList from "@/components/ProductsList/ProductsList";
+import HeroSlider from "@/components/HeroSlider/HeroSlider";
 
 export default async function Home() {
   let data = await getData();
@@ -10,17 +11,17 @@ export default async function Home() {
   return (
     <div className={styles.pageContainer}>
       <main className={styles.main}>
-        <div className={styles.carrouesellContainer}>
-          <h1 style={{ marginLeft: "10px" }}>Destacados</h1>
-          <div className={styles.carrousell}>
-            <ProductsList data={data} limit={10} />
+        <div>
+          <h1 className="w-full pl-[5vw] pb-4 text-2xl font-medium text-left text-gray-800">Equipos armados</h1>
+          <div className="w-[100vw] bg-[#EEEEEE] h-[40vw] max-h-[430px]">
+            <HeroSlider />
           </div>
         </div>
 
         <div className={styles.carrouesellContainer}>
           <h1 style={{ marginLeft: "10px" }}>En oferta!</h1>
           <div className={styles.carrousell}>
-          <ProductsList data={data} limit={10} />
+            <ProductsList data={data} limit={10} />
           </div>
         </div>
       </main>
