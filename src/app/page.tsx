@@ -13,7 +13,7 @@ export default async function Home() {
       <main className={styles.main}>
         <div>
           <h1 className="w-full pl-[5vw] pb-4 text-2xl font-medium text-left text-gray-800">Equipos armados</h1>
-          <div className="w-[100vw] bg-[#EEEEEE] h-[40vw] max-h-[430px]">
+          <div className="w-[100vw] bg-[#EEEEEE] h-[60vw] max-h-[600px]">
             <HeroSlider />
           </div>
         </div>

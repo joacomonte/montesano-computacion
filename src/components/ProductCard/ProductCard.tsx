@@ -5,21 +5,20 @@ import { RefObject, createRef } from "react";
 import Link from "next/link";
 import CustomDialog from "../CustomDialog/CustomDialog";
 
-const dialogContent = (
-  <>
-    <h1>Proximamente</h1>
-  </>
-);
-
 interface ProductProps {
   title?: string | null;
   img?: string | null;
   price?: string | null;
   oldPrice?: string | null;
   stock?: string | null;
+  description?: string | null;
+  cuotas1?: string | null;
+  cuotas2?: string | null;
 }
 
-const ProductCard: React.FC<ProductProps> = ({ title, img, price, oldPrice, stock }) => {
+const ProductCard: React.FC<ProductProps> = ({ title, img, price, oldPrice, stock, description, cuotas1, cuotas2 }) => {
+  const dialogContent = description || "";
+
   const whatsAppMessage = encodeURIComponent(`Estoy interesado en ${title}`);
 
   const dialogRef: RefObject<HTMLDialogElement> = createRef();
@@ -60,12 +59,14 @@ const ProductCard: React.FC<ProductProps> = ({ title, img, price, oldPrice, stoc
           ></Image>
         )}
       </div>
+
       <div>
         {title && <div className={styles.title}>{title}</div>}
         <button className={styles.infoButton} onClick={openDialog}>
-          Mas info...
+          Ver descripción
         </button>
       </div>
+
       <div className={styles.bottomContainer}>
         <div className={styles.oldPriceContainer}>
           {oldPrice && <h5 className={styles.oldPrice}>{oldPrice}</h5>}
@@ -84,6 +85,9 @@ const ProductCard: React.FC<ProductProps> = ({ title, img, price, oldPrice, stoc
           ></Image>
         </Link>
       </div>
+
+      <div className="text-xs ">3 cuotas de {cuotas1}</div>
+      <div className="text-xs ">6 cuotas de {cuotas2}</div>
 
       <CustomDialog onClose={closeDialog} content={dialogContent} dialogRef={dialogRef} />
     </div>
