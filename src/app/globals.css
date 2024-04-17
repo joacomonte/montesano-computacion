@@ -2,13 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New",
+    monospace;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -41,7 +39,7 @@ a {
   text-decoration: none;
 }
 
-.menuBarContainer{
+.menuBarContainer {
   position: fixed;
   width: 100%;
   height: 100px;
@@ -49,6 +47,7 @@ a {
   display: flex;
   justify-content: center;
   z-index: 1;
+  box-shadow: 0 10px 10px rgba(110, 110, 110, 0.1); /* Adjust the values as needed */
 }
 
 .layoutContainer {
@@ -80,13 +79,11 @@ a {
   justify-self: center;
   align-items: center;
   grid-column: 2;
-
 }
 .layoutContainer > :nth-child(3) {
   justify-self: flex-end;
   justify-content: flex-end;
   grid-column: 3;
-
 }
 
 .logoContainer {
@@ -103,8 +100,7 @@ a {
   }
 }
 
-
-.productsContainer{
+.productsContainer {
   width: 90vw;
   display: flex;
   justify-content: center;
@@ -121,11 +117,12 @@ a {
 }
 
 /* places it behind the sideMenu */
-.swiper{
-  z-index: 0 !important; 
+.swiper {
+  z-index: 0 !important;
 }
 
-.swiper-button-next::after, .swiper-button-prev::after{
+.swiper-button-next::after,
+.swiper-button-prev::after {
   color: rgb(49, 49, 49) !important;
-  font-size: 30px !important
+  font-size: 30px !important;
 }

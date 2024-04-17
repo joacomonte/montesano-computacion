@@ -10,6 +10,7 @@ const API_KEY = "AIzaSyBLFucdHwI51bvInRnmig4Tl2fglpqYffk";
 
 export async function getData(): Promise<ProductsList> {
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/productList?key=${API_KEY}`;
+
   const res = await fetch(url, { next: { revalidate: 120 } } as RequestInit); // RequestInit fix TS alert of next revalidate 30 seconds
 
   if (!res.ok) {

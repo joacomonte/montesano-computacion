@@ -1,14 +1,14 @@
 .card {
   position: relative;
   background-color: var(--background-product-card);
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  height: auto;
-  max-height: 490px;
+  height: 500px;
+  max-height: 500px;
 
   min-width: 300px;
   width: 300px;
@@ -24,6 +24,7 @@
     width: 40vw;
     font-size: 14px;
     padding: 10px;
+    max-height: 380px;
   }
 }
 
@@ -43,13 +44,13 @@
 }
 
 .title {
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: 600;
   padding: 2px 0;
 }
 @media (max-width: 768px) {
   .title {
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 600;
     padding: 2px 0;
   }
