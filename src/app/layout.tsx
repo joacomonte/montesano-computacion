@@ -10,7 +10,7 @@ import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Montesano Computacion",
+  title: "RML Importaciones",
   description: "Developed by Montech",
   //to avoid zoom on inputs
   viewport: {
@@ -28,15 +28,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <div className="layoutContainer">
             <SideMenu data={menuData} />
             <Link href={"/"} className="logoContainer">
-              <Image
-                src="/mcLogo.svg"
-                alt="Logo"
-                sizes="500px"
-                fill
-                style={{
-                  objectFit: "contain",
-                }}
-              />
+              <p>RML</p>
             </Link>
             <QuickSearch />
           </div>
