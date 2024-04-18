@@ -2,13 +2,15 @@
   position: relative;
   background-color: var(--background-product-card);
   padding: 20px;
+  padding-top: 5px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  height: 500px;
-  max-height: 500px;
+  min-height: 510px;
+  height: 510px;
+  max-height: 510px;
 
   min-width: 300px;
   width: 300px;
@@ -21,9 +23,9 @@
 @media (max-width: 768px) {
   .card {
     min-width: 150px;
-    width: 40vw;
-    font-size: 14px;
-    padding: 10px;
+    width: 80vw;
+    padding: 15px;
+    padding-top: 5px;
     max-height: 380px;
   }
 }
@@ -50,7 +52,7 @@
 }
 @media (max-width: 768px) {
   .title {
-    font-size: 0.9em;
+    font-size: 1em;
     font-weight: 600;
     padding: 2px 0;
   }

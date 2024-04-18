@@ -28,7 +28,15 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <div className="layoutContainer">
             <SideMenu data={menuData} />
             <Link href={"/"} className="logoContainer">
-              <p>RML</p>
+              <Image
+                src="/rml_logo.png"
+                alt="Logo"
+                sizes="500px"
+                fill
+                style={{
+                  objectFit: "contain",
+                }}
+              />
             </Link>
             <QuickSearch />
           </div>
