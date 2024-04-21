@@ -26,7 +26,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <SideMenu data={menuData} />
             <Link href={"/"} className="logoContainer">
               <Image
-                src="/rml_logo.png"
+                src="/newRML_logo.png"
                 alt="Logo"
                 sizes="500px"
                 fill
