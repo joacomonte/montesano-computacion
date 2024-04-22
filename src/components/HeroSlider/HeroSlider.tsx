@@ -22,7 +22,7 @@ const HeroSlider: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full mt-[90px]">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         spaceBetween={0}
