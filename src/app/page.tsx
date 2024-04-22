@@ -21,7 +21,7 @@ export default async function Home() {
         </div>
 
         <div className={styles.carrouesellContainer}>
-          <h1 className="w-full pb-4 text-2xl font-medium text-left text-gray-800">En oferta!</h1>
+          <h1 className="w-full pb-4 text-2xl font-medium text-left text-gray-800">Oferta semanal</h1>
           <div className={styles.carrousell}>
             <ProductsList data={offers} limit={10} />
           </div>
