@@ -3,7 +3,7 @@ import styles from './CustomDialog.module.css'
 
 type CustomDialogProps = {
     onClose: () => void;
-    content: JSX.Element;
+    content?: JSX.Element | string | null;
     dialogRef: React.RefObject<HTMLDialogElement>;
 }
 
