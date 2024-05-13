@@ -1,19 +1,18 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 50px;
   align-items: center;
-  padding-top: 150px;
   min-height: 100vh;
 }
 
-.carrouesellContainer{
+.carrouesellContainer {
   width: 100vw;
   padding-bottom: 50px;
   padding-left: 5vw;
 }
 
-.carrousell{
+.carrousell {
   display: flex;
   padding: 20px 0;
   width: 100%;
