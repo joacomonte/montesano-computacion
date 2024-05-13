@@ -10,6 +10,7 @@ const index = {
     CATEGORY: 7,
     SUBCATEGORY: 8,
     VISIBLE: 9,
+    CUOTAS:10
   };
   
   export default index;

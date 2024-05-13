@@ -1,7 +1,9 @@
 import React from 'react';
 import ProductCard from '@/components/ProductCard/ProductCard'
 import index from '@/globals';
-import { Product, ProductsList } from '@/types/products'
+import { Product } from "@/types/products";
+import type { ProductsList } from "@/types/products";
+
 
 interface ProductsListComponentProps {
     data: ProductsList;
@@ -26,6 +28,7 @@ const ProductsList: React.FC<ProductsListComponentProps> = ({ data, limit }) => 
                     price={product[index.PRICE]}
                     oldPrice={product[index.OLD_PRICE]}
                     stock={product[index.STOCK]}
+                    cuotas={product[index.CUOTAS]}
                 />
             ))}
         </>

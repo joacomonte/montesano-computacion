@@ -9,7 +9,7 @@
   justify-content: space-between;
 
   min-height: 480px;
-  max-height: 550px;
+  max-height: 570px;
 
   min-width: 300px;
   max-width: 300px;
@@ -54,7 +54,9 @@
 .bottomContainer {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: start;
   margin: 10px 0;
 }
 

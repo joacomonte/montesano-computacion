@@ -15,7 +15,7 @@ export async function getData(): Promise<ProductsList> {
 
   const result = await res.json();
 
-  const values: ProductsList = result.values || [];
+  const values: ProductsList = result.values ? result.values.slice(1) : [];
 
   // filter all visible products 
   const visibleProducts: ProductsList = values.filter(product => product[index.VISIBLE] !== 'oculto');

@@ -12,15 +12,14 @@ interface ProductProps {
   oldPrice?: string | null;
   stock?: string | null;
   description?: string | null;
+  cuotas?: string | null;
 }
 
-const ProductCard: React.FC<ProductProps> = ({ title, img, price, oldPrice, stock, description }) => {
-
+const ProductCard: React.FC<ProductProps> = ({ title, img, price, oldPrice, stock, description, cuotas }) => {
   const dialogContent = description ?? null;
 
-
   const lineJumper = (stock: string): string[] => {
-    return stock.split('\\').map((item) => item.trim());
+    return stock.split("\\").map((item) => item.trim());
   };
 
   const whatsAppMessage = encodeURIComponent(`Estoy interesado en ${title}`);
@@ -75,31 +74,32 @@ const ProductCard: React.FC<ProductProps> = ({ title, img, price, oldPrice, stoc
             </button>
           )} */}
 
-            <button className="mt-1 text-sm text-left text-gray-500 underline hover:text-green-900 hover:font-medium" onClick={openDialog}>
-              Mas info
-            </button>
-
+          <button className="mt-1 text-sm text-left text-gray-500 underline hover:text-green-900 hover:font-medium" onClick={openDialog}>
+            Mas info
+          </button>
         </div>
 
         {/* BOTTOM PART */}
         <div className={styles.bottomContainer}>
-          <div className={styles.oldPriceContainer}>
-            {oldPrice && <p className={styles.oldPrice}>{oldPrice}</p>}
-            {/* {price && <p className={styles.price}>{price}</p>} */}
-            <p className={styles.price}>$150.000</p>
-            <div className=" mt-2 border-2 p-2 border-gray-100 rounded-xl ">
-              <h4 className=" text-sm text text-gray-400">Lista de precios</h4>
-              <p className=" text-sm text-green-700">$180.000 3 cuotas sin interes</p>
-              <p className=" text-sm text-green-700">$200.000 6 cuotas sin interes</p>
-            </div>
+          {oldPrice && <p className={styles.oldPrice}>{oldPrice}</p>}
+          {price ? <p className={styles.price}>{price}</p> : <p className={styles.stock}>{stock}</p>}
 
-          </div>
+          {cuotas && (
+            <div className=" mt-2 border-2 p-2 border-gray-100 rounded-xl w-full ">
+              <h4 className="text-sm text-gray-400">Lista de precios en cuotas</h4>
+              {lineJumper(cuotas).map((item, index) => (
+                <p key={index} className="text-sm text-green-700">
+                  {item}
+                </p>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
       {/* WHATSAPP  */}
       <div>
-        <Link className={styles.whatsappLink} href={`https://api.whatsapp.com/send?phone=5491130347718&text=${whatsAppMessage}`}> 
+        <Link className={styles.whatsappLink} href={`https://api.whatsapp.com/send?phone=5491130347718&text=${whatsAppMessage}`}>
           <p className=" text-[#439c4c]">Consultar</p>
 
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" className="w-[20px] h-[20px]" viewBox="0 0 50 50">
@@ -111,8 +111,7 @@ const ProductCard: React.FC<ProductProps> = ({ title, img, price, oldPrice, stoc
         </Link>
       </div>
 
-      { description && <CustomDialog onClose={closeDialog} content={dialogContent} dialogRef={dialogRef} /> }
-
+      {description && <CustomDialog onClose={closeDialog} content={dialogContent} dialogRef={dialogRef} />}
     </div>
   );
 };

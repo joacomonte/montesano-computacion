@@ -11,14 +11,14 @@ export default async function Home() {
     <div className={styles.pageContainer}>
       <main className={styles.main}>
         <div className={styles.carrouesellContainer}>
-          <h1 style={{ marginLeft: "10px" }}>Destacados</h1>
+          <h1 className=" ml-2 text-3xl font-medium" >Destacados</h1>
           <div className={styles.carrousell}>
             <ProductsList data={data} limit={10} />
           </div>
         </div>
 
         <div className={styles.carrouesellContainer}>
-          <h1 style={{ marginLeft: "10px" }}>En oferta!</h1>
+          <h1 className=" ml-2 text-3xl font-medium">En oferta!</h1>
           <div className={styles.carrousell}>
           <ProductsList data={data} limit={10} />
           </div>
