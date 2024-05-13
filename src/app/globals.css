@@ -88,15 +88,15 @@ a {
 
 .logoContainer {
   position: relative;
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 70px;
 }
 
 @media (max-width: 768px) {
   .logoContainer {
     position: relative;
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
   }
 }
 

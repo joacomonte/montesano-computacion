@@ -34,7 +34,7 @@ export default async function RootLayout({
         <SideMenu data={menuData} />
           <Link href={'/'} className="logoContainer">
           <Image src="/mcLogo.svg" alt="Logo"
-            sizes="500px"
+            sizes="400px"
             fill
             style={{
               objectFit: "contain",
