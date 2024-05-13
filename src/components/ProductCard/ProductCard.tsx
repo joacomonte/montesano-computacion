@@ -69,7 +69,7 @@ const ProductCard: React.FC<ProductProps> = ({ title, img, price, oldPrice, stoc
         </div>
 
         {/* TITLE Y MAS INFO */}
-        <div className="pl-2 pr-2 h-full  flex flex-col justify-between" >
+        <div className="pl-2 pr-2 h-full">
           {title && <div className="mt-3 text-lg font-semibold">{title}</div>}
 
           {description && (
