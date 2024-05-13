@@ -2,8 +2,8 @@
 import index from "@/globals";
 import { ProductsList } from "../types/products";
 
-const SHEET_ID = "1oqa9dPzua1lSxqxHMDcBYjD45VcxsrB6QlUO9Ay_o_A";
-const API_KEY = "AIzaSyBYJ0Z4VeSzjtWB1eMX_TPqhBQsD7b-qH0";
+const SHEET_ID = process.env.SHEET_ID;
+const API_KEY = process.env.API_KEY;
 
 // const SHEET_ID = process.env.SHEET_ID;
 // const API_KEY = process.env.API_KEY;

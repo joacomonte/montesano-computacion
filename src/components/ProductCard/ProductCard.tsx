@@ -85,10 +85,10 @@ const ProductCard: React.FC<ProductProps> = ({ title, img, price, oldPrice, stoc
           {price ? <p className={styles.price}>{price}</p> : <p className={styles.stock}>{stock}</p>}
 
           {cuotas && (
-            <div className=" mt-2 border-2 p-2 border-gray-100 rounded-xl w-full ">
-              <h4 className="text-sm text-gray-400">Lista de precios en cuotas</h4>
+            <div className=" mt-1 border-2 p-2 border-gray-100 rounded-xl w-full ">
+              <h4 className="text-sm font-medium text-gray-400">Lista de precios en cuotas</h4>
               {lineJumper(cuotas).map((item, index) => (
-                <p key={index} className="text-sm text-green-700">
+                <p key={index} className="text-sm font-light text-green-700">
                   {item}
                 </p>
               ))}
