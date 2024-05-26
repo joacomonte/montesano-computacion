@@ -46,7 +46,7 @@ a {
   background-color: white;
   display: flex;
   justify-content: center;
-  z-index: 1;
+  z-index: 30;
   box-shadow: 0 10px 10px rgba(110, 110, 110, 0.1); /* Adjust the values as needed */
 }
 

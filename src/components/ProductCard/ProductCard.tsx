@@ -52,60 +52,62 @@ const ProductCard: React.FC<ProductProps> = ({ title, img, price, oldPrice, stoc
 
   return (
     <div className={styles.card}>
-      <div>
-        <div className={styles.imgContainer}>
-          {img ? (
-            <Image
-              src={img}
-              alt="Placeholder"
-              sizes="500px"
-              fill
-              style={{
-                objectFit: "contain",
-              }}
-              unoptimized
-            ></Image>
-          ) : (
-            <Image
-              src={"/img.png"}
-              alt="Placeholder"
-              sizes="500px"
-              fill
-              style={{
-                objectFit: "contain",
-              }}
-            ></Image>
-          )}
-        </div>
+      <div className=" z-10 m-1 absolute flex flex-row-reverse flex-wrap">
+        <span className=" items-center m-1 py-1.5 px-3 rounded-full text-xs font-medium bg-[#eaffec] text-[#439c4c]">Nuevo</span>
+        {/* <span className=" items-center m-1 py-1.5 px-3 rounded-full text-xs font-medium  bg-orange-100 text-orange-500">oferta semanal</span> */}
+      </div>
+      <div className={styles.imgContainer}>
+        {img ? (
+          <Image
+            src={img}
+            alt="Placeholder"
+            sizes="500px"
+            fill
+            style={{
+              objectFit: "contain",
+            }}
+            unoptimized
+          ></Image>
+        ) : (
+          <Image
+            src={"/img.png"}
+            alt="Placeholder"
+            sizes="500px"
+            fill
+            style={{
+              objectFit: "contain",
+            }}
+          ></Image>
+        )}
+      </div>
 
-        {/* TITLE Y MAS INFO */}
-        <div>
-          {title && <div className="mt-3 text-lg font-semibold">{title}</div>}
+      {/* TITLE Y MAS INFO */}
+      <div className="m-0">
+        {title && <div className="mt-2 px-2 font-semibold">{title}</div>}
 
-          {description && (
-            <button className="mt-1 text-sm text-left text-gray-500 underline hover:text-green-900 hover:font-medium" onClick={openDialog}>
-              Mas info
-            </button>
-          )}
-        </div>
+        {description && (
+          <button className="mt-1 text-sm px-2 text-left text-gray-500 underline hover:text-green-900 hover:font-medium" onClick={openDialog}>
+            Mas info
+          </button>
+        )}
+      </div>
 
-        {/* BOTTOM PART */}
-        <div className={styles.bottomContainer}>
-          <div className={styles.oldPriceContainer}>
-            {oldPrice && <p className={styles.oldPrice}>{oldPrice}</p>}
-            {price && <p className={styles.price}>{price}</p>}
-            {stock &&
-              splitStockItems(stock).map((item, index) => (
-                <p key={index} className="text-xs text-green-800 ">
-                  {item}
-                </p>
-              ))}
-          </div>
+      {/* BOTTOM PART */}
+      <div className={styles.bottomContainer}>
+        <div className="flex gap-2">
+          {oldPrice && <p className=" text-lg  line-through text-gray-500">${oldPrice}</p>}
+          {price && <p className=" text-lg font-bold">{price}</p>}
         </div>
+        {stock &&
+          splitStockItems(stock).map((item, index) => (
+            <p key={index} className="text-xs text-gray-500 ">
+              {item}
+            </p>
+          ))}
       </div>
 
       {/* WHATSAPP  */}
-      <div>
+      <div className=" p-2">
         <button onClick={openContactDialog} className={styles.whatsappLink}>
           <p className=" text-[#439c4c]">Consultar</p>
 
