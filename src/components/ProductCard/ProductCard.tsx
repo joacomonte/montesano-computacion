@@ -52,9 +52,9 @@ const ProductCard: React.FC<ProductProps> = ({ title, img, price, oldPrice, stoc
 
   return (
     <div className={styles.card}>
-      <div className=" z-10 m-1 absolute flex flex-row-reverse flex-wrap">
-        <span className=" items-center m-1 py-1.5 px-3 rounded-full text-xs font-medium bg-[#eaffec] text-[#439c4c]">Nuevo</span>
-        {/* <span className=" items-center m-1 py-1.5 px-3 rounded-full text-xs font-medium  bg-orange-100 text-orange-500">oferta semanal</span> */}
+      <div className=" z-10 m-1 absolute flex flex-row-reverse gap-1 flex-wrap">
+        <span className=" items-center py-1 px-3 rounded-full text-xs font-medium bg-[#eaffec] text-[#439c4c]">Nuevo</span>
+        <span className=" items-center py-1 px-3 rounded-full text-xs font-medium  bg-orange-100 text-orange-500">Oferta</span>
       </div>
       <div className={styles.imgContainer}>
         {img ? (

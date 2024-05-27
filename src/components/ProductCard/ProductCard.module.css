@@ -20,7 +20,7 @@
 
 @media (max-width: 429px) {
   .card {
-    height: 360px;
+    min-height: 380px;
     width: 180px;
   }
 }
