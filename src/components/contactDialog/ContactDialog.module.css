@@ -1,0 +1,48 @@
+.dialog {
+  min-width: 350px;
+  max-width: 350px;
+
+  min-height: 300px;
+
+  max-height: 300px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: none;
+  border-radius: 10px;
+}
+
+.dialog::backdrop {
+  background-color: rgba(128, 128, 128, 0.283);
+  backdrop-filter: blur(7px);
+}
+
+.dialogContainer {
+  padding: 20px 35px;
+}
+
+.closeDialogButton {
+  position: absolute;
+  font-size: 25px;
+  top: 0;
+  right: 20px;
+  padding: 25px 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.whatsappLink {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  padding: 12px 15px;
+  background-color: #eaffec;
+  width: 100%;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import ProductCard from "@/components/ProductCard/ProductCard";
 import index from "@/globals";
-import { Product, ProductsList } from "@/types/products";
+import type { Product, ProductsList } from "@/types/products";
 
 interface ProductsListComponentProps {
   data: ProductsList;
