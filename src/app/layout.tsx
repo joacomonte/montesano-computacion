@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import SideMenu from "../components/SideMenu/SideMenu";
-import { menuData } from "../data/menuData";
+// import { menuData } from "../data/menuData";
 import Image from "next/image";
 import QuickSearch from "../components/QuickSearch/QuickSearch";
 import Link from "next/link";
@@ -23,7 +23,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className={inter.className}>
         <div className="menuBarContainer">
           <div className="layoutContainer">
-            <SideMenu data={menuData} />
+            {/* <SideMenu data={menuData} /> */}
+            <SideMenu />
             <Link href={"/"} className="logoContainer">
               <Image
                 src="/newRML_logo.png"

@@ -18,7 +18,6 @@ const HeroSlider: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getHeroImgs();
-      console.log(data);
       setImages(data);
       setLoading(false);
     };
