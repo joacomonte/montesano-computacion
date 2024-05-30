@@ -1,12 +1,13 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import { SideMenuProps } from "./interfaces"; // Make sure to import the correct path to your interfaces
 import style from "./SideMenu.module.css";
 import MenuItem from "./MenuItem/MenuItem";
 import useClickOutside from "@/hooks/useOutsideClick";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import BurgerIcon from "../burgerIcon/BurgerIcon";
+import { generateMenuData } from "@/data/menuDataGenerator";
+
 
 interface BurgerIconProps {
   isMenuOpen: boolean;
@@ -14,8 +15,10 @@ interface BurgerIconProps {
 }
 
 
-const SideMenu = ({ data }: SideMenuProps) => {
+const SideMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  const [menuData, setMenuData] = useState<any[]>([]);
 
   const toggleMenu = () => {
     setIsMenuOpen(prevState => !prevState);
@@ -28,12 +31,22 @@ const SideMenu = ({ data }: SideMenuProps) => {
     setIsMenuOpen(true);
   };
 
-
   // to close the menu when change route
   const pathname = usePathname();
   useEffect(() => {
     closeMenu(); // close the menu whenever the pathname or searchParams changes
   }, [pathname]);
+
+
+
+  useEffect(() => {
+    const fetchMenuData = async () => {
+      const data = await generateMenuData();
+      setMenuData(data);
+    };
+
+    fetchMenuData();
+  }, []);
 
   // to close the menu when click outside
   const divRef = useRef(null);
@@ -51,7 +64,7 @@ const SideMenu = ({ data }: SideMenuProps) => {
         </div> */}
 
         {isMenuOpen &&
-          data.map((category) => <MenuItem key={category.id} {...category} />)}
+          menuData.map((category) => <MenuItem key={category.id} {...category} />)}
       </nav>
     </div>
   );
