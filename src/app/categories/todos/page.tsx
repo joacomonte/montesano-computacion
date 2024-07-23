@@ -1,5 +1,5 @@
 import ProductsList from "@/components/ProductsList/ProductsList";
-import {getData} from "src/lib/getData"
+import {getData} from "src/lib/getAllData"
 
 export default async function AllSubCategories() {
   let data = await getData();
