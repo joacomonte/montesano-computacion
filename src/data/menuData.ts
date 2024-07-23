@@ -1,9 +1,9 @@
 export const menuData = [
-    {
-        id:"00",
-        label: "Todos los productos",
-        href: "/todos",
-    },
+    // {
+    //     id:"00",
+    //     label: "Todos los productos",
+    //     href: "/todos",
+    // },
     {
         id: "01",
         label: "Componentes",
