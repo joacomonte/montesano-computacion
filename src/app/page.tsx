@@ -4,6 +4,9 @@ import styles from "./page.module.css";
 import { getData } from "@/lib/getAllData";
 import ProductsList from "@/components/ProductsList/ProductsList";
 
+// Force dynamic rendering to prevent build-time data fetching
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
   let data = await getData();
 
